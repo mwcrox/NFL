@@ -103,3 +103,17 @@ main#content.fade-in {
 .score-display img {
     height: 128px;
 }
+
+@media (max-width: 600px) {
+    .score-display {
+        font-size: 20px;
+        /* slightly smaller on mobile */
+        gap: 8px;
+        /* less spacing between elements */
+    }
+
+    .score-display img {
+        height: 72px;
+        /* smaller logo for phones */
+    }
+}
