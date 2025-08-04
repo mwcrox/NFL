@@ -146,7 +146,7 @@ function updateTotalWins() {
     }, 0);
 
     const michaelLogo = `<img src="pictures/Michael.png" alt="Michael" class="team-logo">`;
-    const zachLogo = `<img src="pictures/Zach.png" alt="Zach" class="team-logo">`;
+    const zachLogo = `<img src="pictures/Zach.PNG" alt="Zach" class="team-logo">`;
 
     let displayHTML = '';
     if (michaelTotal >= zachTotal) {
