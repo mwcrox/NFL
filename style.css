@@ -1,0 +1,79 @@
+/* Background Image and General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1f2937;
+    background-image: url("Background2.0.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+#content.fade-in {
+    display: block;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Header and Layout */
+header {
+    background-color: rgba(30, 58, 138, 0.9);
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+.container {
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    margin: 2em auto;
+    max-width: 900px;
+}
+
+.scoreboard,
+.key-matchups,
+.team-section {
+    margin-bottom: 2em;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+
+.columns {
+    display: flex;
+    gap: 2em;
+}
+
+.column {
+    flex: 1;
+}
