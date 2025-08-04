@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('Background2.0.png');
+    background-image: url('pictures/Background2.0.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,4 +88,10 @@ main#content.fade-in {
     /* Each column takes equal space */
     min-width: 300px;
     /* Prevents squishing on smaller screens */
+}
+
+.team-logo {
+    height: 64px;
+    vertical-align: middle;
+    margin: 0 8px;
 }

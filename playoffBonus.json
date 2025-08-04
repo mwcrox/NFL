@@ -1,0 +1,39 @@
+{
+    "wildcard": [
+        "AFC 1",
+        "AFC 2",
+        "AFC 3",
+        "AFC 4",
+        "AFC 5",
+        "AFC 6",
+        "AFC 7",
+        "NFC 1",
+        "NFC 2",
+        "NFC 3",
+        "NFC 4",
+        "NFC 5",
+        "NFC 6",
+        "NFC 7"
+    ],
+    "divisional": [
+        "AFC 1",
+        "AFC 2",
+        "AFC 3",
+        "AFC 4",
+        "NFC 1",
+        "NFC 2",
+        "NFC 3",
+        "NFC 4"
+    ],
+    "championship": [
+        "AFC 1",
+        "AFC 2",
+        "NFC 1",
+        "NFC 2"
+    ],
+    "superbowl": [
+        "AFC 1",
+        "NFC 1"
+    ],
+    "winner": "NFL 1"
+}

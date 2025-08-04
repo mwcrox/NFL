@@ -1086,5 +1086,65 @@
             "home": "Carolina Panthers",
             "away": "Tampa Bay Buccaneers"
         }
+    ],
+    "Wild Card Round": [
+        {
+            "home": "AFC 2",
+            "away": "AFC 7"
+        },
+        {
+            "home": "AFC 3",
+            "away": "AFC 6"
+        },
+        {
+            "home": "AFC 4",
+            "away": "AFC 5"
+        },
+        {
+            "home": "NFC 2",
+            "away": "NFC 7"
+        },
+        {
+            "home": "NFC 3",
+            "away": "NFC 6"
+        },
+        {
+            "home": "NFC 4",
+            "away": "NFC 5"
+        }
+    ],
+    "Divisional Round": [
+        {
+            "home": "AFC 1",
+            "away": "AFC 4"
+        },
+        {
+            "home": "AFC 2",
+            "away": "AFC 3"
+        },
+        {
+            "home": "NFC 1",
+            "away": "NFC 4"
+        },
+        {
+            "home": "NFC 2",
+            "away": "NFC 3"
+        }
+    ],
+    "Conference Championship": [
+        {
+            "home": "AFC 1",
+            "away": "AFC 2"
+        },
+        {
+            "home": "NFC 1",
+            "away": "NFC 2"
+        }
+    ],
+    "Super Bowl": [
+        {
+            "home": "AFC 1",
+            "away": "NFC 1"
+        }
     ]
 }

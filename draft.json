@@ -1,134 +1,102 @@
 {
     "michael": [
         {
-            "name": "San Francisco 49ers",
-            "wins": 3
+            "name": "San Francisco 49ers"
         },
         {
-            "name": "Kansas City Chiefs",
-            "wins": 2
+            "name": "Kansas City Chiefs"
         },
         {
-            "name": "Baltimore Ravens",
-            "wins": 4
+            "name": "Baltimore Ravens"
         },
         {
-            "name": "Miami Dolphins",
-            "wins": 3
+            "name": "Miami Dolphins"
         },
         {
-            "name": "New York Jets",
-            "wins": 1
+            "name": "New York Jets"
         },
         {
-            "name": "Seattle Seahawks",
-            "wins": 3
+            "name": "Seattle Seahawks"
         },
         {
-            "name": "Houston Texans",
-            "wins": 0
+            "name": "Houston Texans"
         },
         {
-            "name": "New York Giants",
-            "wins": 2
+            "name": "New York Giants"
         },
         {
-            "name": "Tampa Bay Buccaneers",
-            "wins": 3
+            "name": "Tampa Bay Buccaneers"
         },
         {
-            "name": "Minnesota Vikings",
-            "wins": 4
+            "name": "Minnesota Vikings"
         },
         {
-            "name": "Cleveland Browns",
-            "wins": 1
+            "name": "Cleveland Browns"
         },
         {
-            "name": "Indianapolis Colts",
-            "wins": 2
+            "name": "Indianapolis Colts"
         },
         {
-            "name": "Denver Broncos",
-            "wins": 0
+            "name": "Denver Broncos"
         },
         {
-            "name": "Tennessee Titans",
-            "wins": 3
+            "name": "Tennessee Titans"
         },
         {
-            "name": "Atlanta Falcons",
-            "wins": 1
+            "name": "Atlanta Falcons"
         },
         {
-            "name": "Carolina Panthers",
-            "wins": 2
+            "name": "Carolina Panthers"
         }
     ],
     "zach": [
         {
-            "name": "Buffalo Bills",
-            "wins": 3
+            "name": "Buffalo Bills"
         },
         {
-            "name": "Dallas Cowboys",
-            "wins": 4
+            "name": "Dallas Cowboys"
         },
         {
-            "name": "Philadelphia Eagles",
-            "wins": 3
+            "name": "Philadelphia Eagles"
         },
         {
-            "name": "Cincinnati Bengals",
-            "wins": 2
+            "name": "Cincinnati Bengals"
         },
         {
-            "name": "Jacksonville Jaguars",
-            "wins": 4
+            "name": "Jacksonville Jaguars"
         },
         {
-            "name": "Green Bay Packers",
-            "wins": 2
+            "name": "Green Bay Packers"
         },
         {
-            "name": "Los Angeles Chargers",
-            "wins": 2
+            "name": "Los Angeles Chargers"
         },
         {
-            "name": "Detroit Lions",
-            "wins": 1
+            "name": "Detroit Lions"
         },
         {
-            "name": "New Orleans Saints",
-            "wins": 3
+            "name": "New Orleans Saints"
         },
         {
-            "name": "Pittsburgh Steelers",
-            "wins": 2
+            "name": "Pittsburgh Steelers"
         },
         {
-            "name": "Washington Commanders",
-            "wins": 1
+            "name": "Washington Commanders"
         },
         {
-            "name": "Las Vegas Raiders",
-            "wins": 0
+            "name": "Las Vegas Raiders"
         },
         {
-            "name": "Chicago Bears",
-            "wins": 1
+            "name": "Chicago Bears"
         },
         {
-            "name": "New England Patriots",
-            "wins": 3
+            "name": "New England Patriots"
         },
         {
-            "name": "Arizona Cardinals",
-            "wins": 0
+            "name": "Arizona Cardinals"
         },
         {
-            "name": "Los Angeles Rams",
-            "wins": 2
+            "name": "Los Angeles Rams"
         }
     ]
 }
