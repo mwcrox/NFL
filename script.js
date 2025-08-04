@@ -1,51 +1,44 @@
-const teamsData = {
-    michael: [
-        { name: '49ers', wins: 3, playoffs: false, superbowl: false },
-        { name: 'Chiefs', wins: 2, playoffs: true, superbowl: true, sbWin: true },
-    ],
-    friend: [
-        { name: 'Bills', wins: 2, playoffs: true },
-        { name: 'Cowboys', wins: 4, playoffs: false },
-    ],
-};
+async function loadTeams() {
+    try {
+        const draftRes = await fetch('draft.json');
+        const draft = await draftRes.json();
 
-const schedule = [
-    { home: '49ers', away: 'Cowboys' },
-    { home: 'Bills', away: 'Chiefs' },
-    { home: 'Packers', away: 'Bears' },
-];
+        const wins = await fetchTeamWins();
 
-function calculatePoints(team) {
-    let points = team.wins * 2;
-    if (team.superbowl) points += 10;
-    else if (team.playoffs) points += 7;
-    if (team.sbWin) points += 7;
-    return points;
+        const michaelTeams = draft.michael.map(team => ({
+            name: team.name,
+            wins: wins[team.name] ?? 0
+        }));
+
+        const zachTeams = draft.zach.map(team => ({
+            name: team.name,
+            wins: wins[team.name] ?? 0
+        }));
+
+        renderTeams('michael-teams', michaelTeams);
+        renderTeams('friend-teams', zachTeams);
+    } catch (err) {
+        console.error('Error loading teams or wins:', err);
+    }
 }
 
-function updateScores() {
-    const michaelPoints = teamsData.michael.reduce((sum, t) => sum + calculatePoints(t), 0);
-    const friendPoints = teamsData.friend.reduce((sum, t) => sum + calculatePoints(t), 0);
-    document.getElementById('scores').innerHTML = `Michael: ${michaelPoints} pts | Friend: ${friendPoints} pts`;
+async function fetchTeamWins() {
+    const res = await fetch('https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4391&s=2025');
+    const data = await res.json();
+
+    const teamWins = {};
+    data.table.forEach(team => {
+        teamWins[team.name] = parseInt(team.win, 10);
+    });
+
+    return teamWins;
 }
 
-function updateMatchups() {
-    const mTeams = teamsData.michael.map(t => t.name);
-    const fTeams = teamsData.friend.map(t => t.name);
-    const keyGames = schedule.filter(g =>
-        (mTeams.includes(g.home) && fTeams.includes(g.away)) ||
-        (fTeams.includes(g.home) && mTeams.includes(g.away))
-    );
-    document.getElementById('matchups').innerHTML = keyGames
-        .map(g => `<div class='card'>${g.home} vs ${g.away}</div>`)
+function renderTeams(containerId, teams) {
+    const html = teams
+        .map(team => `<div class='card'>${team.name} (${team.wins} wins)</div>`)
         .join('');
-}
-
-function updateTeamSection() {
-    const renderTeam = (team) =>
-        `<div class='card'>${team.name}: ${team.wins} wins / ${calculatePoints(team)} pts</div>`;
-    document.getElementById('michael-teams').innerHTML = teamsData.michael.map(renderTeam).join('');
-    document.getElementById('friend-teams').innerHTML = teamsData.friend.map(renderTeam).join('');
+    document.getElementById(containerId).innerHTML = html;
 }
 
 function showPage(page) {
@@ -55,11 +48,8 @@ function showPage(page) {
 
 window.onload = function () {
     setTimeout(() => {
-        const content = document.getElementById('content');
-        content.classList.remove('hidden');
-        content.classList.add('fade-in');
-        updateScores();
-        updateMatchups();
-        updateTeamSection();
-    }, 2500); // 2.5 seconds delay before content fades in
+        document.getElementById('content').classList.remove('hidden');
+        document.getElementById('content').classList.add('fade-in');
+        loadTeams();
+    }, 2500);
 };
