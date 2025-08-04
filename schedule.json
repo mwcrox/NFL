@@ -1,0 +1,1090 @@
+{
+    "Week 1": [
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "New York Jets"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Chicago Bears"
+        }
+    ],
+    "Week 2": [
+        {
+            "home": "Green Bay Packers",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "New York Giants"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Los Angeles Chargers"
+        }
+    ],
+    "Week 3": [
+        {
+            "home": "Buffalo Bills",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Baltimore Ravens"
+        }
+    ],
+    "Week 4": [
+        {
+            "home": "Arizona Cardinals",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Tampa Bay Buccaneers",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Cincinnati Bengals"
+        }
+    ],
+    "Week 5": [
+        {
+            "home": "Los Angeles Rams",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "New York Giants"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Seattle Seahawks",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Kansas City Chiefs"
+        }
+    ],
+    "Week 6": [
+        {
+            "home": "New York Giants",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Tampa Bay Buccaneers",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Green Bay Packers",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Washington Commanders",
+            "away": "Chicago Bears"
+        }
+    ],
+    "Week 7": [
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "New York Giants"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Seattle Seahawks"
+        }
+    ],
+    "Week 8": [
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "New York Giants"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Washington Commanders"
+        }
+    ],
+    "Week 9": [
+        {
+            "home": "Miami Dolphins",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Green Bay Packers",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "New York Giants",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Washington Commanders",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Arizona Cardinals"
+        }
+    ],
+    "Week 10": [
+        {
+            "home": "Denver Broncos",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "New York Giants"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Tampa Bay Buccaneers",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Washington Commanders",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Green Bay Packers"
+        }
+    ],
+    "Week 11": [
+        {
+            "home": "New England Patriots",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "Seattle Seahawks",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Dallas Cowboys"
+        }
+    ],
+    "Week 12": [
+        {
+            "home": "Houston Texans",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "New England Patriots"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "New York Giants"
+        },
+        {
+            "home": "Green Bay Packers",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Seattle Seahawks",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "Tampa Bay Buccaneers"
+        }
+    ],
+    "Week 13": [
+        {
+            "home": "Detroit Lions",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "San Francisco 49ers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Tampa Bay Buccaneers",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "Washington Commanders",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "New York Giants"
+        }
+    ],
+    "Week 14": [
+        {
+            "home": "Detroit Lions",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Baltimore Ravens",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Green Bay Packers",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "New York Jets",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Los Angeles Raiders"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Philadelphia Eagles"
+        }
+    ],
+    "Week 15": [
+        {
+            "home": "Tampa Bay Buccaneers",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "Buffalo Bills"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "New Orleans Saints",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Dallas Cowboys",
+            "away": "Minnesota Vikings"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Pittsburgh Steelers"
+        }
+    ],
+    "Week 16": [
+        {
+            "home": "Seattle Seahawks",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Arizona Cardinals",
+            "away": "Atlanta Falcons"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Detroit Lions",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Las Vegas Raiders"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Cincinnati Bengals"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "San Francisco 49ers"
+        }
+    ],
+    "Week 17": [
+        {
+            "home": "Washington Commanders",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Kansas City Chiefs",
+            "away": "Denver Broncos"
+        },
+        {
+            "home": "Cleveland Browns",
+            "away": "Pittsburgh Steelers"
+        },
+        {
+            "home": "Indianapolis Colts",
+            "away": "Jacksonville Jaguars"
+        },
+        {
+            "home": "Miami Dolphins",
+            "away": "Tampa Bay Buccaneers"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Tennessee Titans",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "Philadelphia Eagles"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Chicago Bears"
+        },
+        {
+            "home": "Atlanta Falcons",
+            "away": "Los Angeles Rams"
+        },
+        {
+            "home": "Seattle Seahawks",
+            "away": "Carolina Panthers"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "Green Bay Packers",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "Los Angeles Chargers",
+            "away": "Houston Texans"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "New York Giants"
+        }
+    ],
+    "Week 18": [
+        {
+            "home": "Atlanta Falcons",
+            "away": "New Orleans Saints"
+        },
+        {
+            "home": "Buffalo Bills",
+            "away": "New York Jets"
+        },
+        {
+            "home": "Chicago Bears",
+            "away": "Detroit Lions"
+        },
+        {
+            "home": "Cincinnati Bengals",
+            "away": "Cleveland Browns"
+        },
+        {
+            "home": "Denver Broncos",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Houston Texans",
+            "away": "Indianapolis Colts"
+        },
+        {
+            "home": "Jacksonville Jaguars",
+            "away": "Tennessee Titans"
+        },
+        {
+            "home": "Los Angeles Rams",
+            "away": "Arizona Cardinals"
+        },
+        {
+            "home": "Las Vegas Raiders",
+            "away": "Kansas City Chiefs"
+        },
+        {
+            "home": "Minnesota Vikings",
+            "away": "Green Bay Packers"
+        },
+        {
+            "home": "New England Patriots",
+            "away": "Miami Dolphins"
+        },
+        {
+            "home": "New York Giants",
+            "away": "Dallas Cowboys"
+        },
+        {
+            "home": "Philadelphia Eagles",
+            "away": "Washington Commanders"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Baltimore Ravens"
+        },
+        {
+            "home": "San Francisco 49ers",
+            "away": "Seattle Seahawks"
+        },
+        {
+            "home": "Carolina Panthers",
+            "away": "Tampa Bay Buccaneers"
+        }
+    ]
+}

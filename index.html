@@ -3,50 +3,37 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NFL Duel Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NFL Draft Game</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- The content starts hidden and fades in after 2.5 seconds -->
-    <div id="content" class="hidden">
-        <header>
-            <div><strong>NFL Game</strong></div>
-            <nav>
-                <a href="#" onclick="showPage('home')">Home</a>
-                <a href="#" onclick="showPage('teams')">Teams</a>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <a href="#" id="nav-home" class="nav-link active">Home</a>
+            <a href="#" id="nav-teams" class="nav-link">Teams</a>
+        </nav>
+    </header>
 
-        <main class="container">
-            <section id="home" class="page">
-                <h1>🏈 NFL Duel Tracker</h1>
-                <div class="scoreboard">
-                    <h2>Scores</h2>
-                    <div id="scores"></div>
-                </div>
-                <div class="key-matchups">
-                    <h2>Key Matchups This Week</h2>
-                    <div id="matchups"></div>
-                </div>
-            </section>
+    <main id="content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <h1>NFL Draft Game</h1>
+            <div id="current-week"></div>
+            <h2>Key Matchups</h2>
+            <div id="matchups"></div>
+        </section>
 
-            <section id="teams" class="page" style="display:none;">
-                <h1>Team Breakdown</h1>
-                <div class="columns">
-                    <div class="column">
-                        <h2>Michael</h2>
-                        <div id="michael-teams"></div>
-                    </div>
-                    <div class="column">
-                        <h2>Friend</h2>
-                        <div id="friend-teams"></div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+        <!-- Teams Page -->
+        <section id="teams" class="page" style="display:none;">
+            <h2>Michael's Teams</h2>
+            <div id="michael-teams"></div>
+
+            <h2>Zach's Teams</h2>
+            <div id="zach-teams"></div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

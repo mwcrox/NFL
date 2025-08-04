@@ -1,79 +1,76 @@
-/* Background Image and General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #1f2937;
-    background-image: url("Background2.0.png");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('Background2.0.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+header {
+    background-color: rgba(30, 58, 138, 0.9);
+    /* navy-ish */
+    padding: 1rem;
 }
 
-.hidden {
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #facc15;
+    /* bright yellow underline */
+    padding-bottom: 0.2rem;
+}
+
+main#content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
+    transition: opacity 1s ease-in-out;
+    max-width: 900px;
+    margin: 1rem auto 3rem;
+    border-radius: 8px;
+}
+
+main#content.fade-in {
+    opacity: 1;
+}
+
+.page {
     display: none;
 }
 
-#content.fade-in {
+.page.active {
     display: block;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Header and Layout */
-header {
-    background-color: rgba(30, 58, 138, 0.9);
-    color: white;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    color: white;
-    margin: 0 1em;
-    text-decoration: none;
-}
-
-.container {
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    margin: 2em auto;
-    max-width: 900px;
-}
-
-.scoreboard,
-.key-matchups,
-.team-section {
-    margin-bottom: 2em;
 }
 
 .card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1em;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    margin: 0.5rem auto;
+    border-radius: 10px;
+    max-width: 400px;
 }
 
-.columns {
-    display: flex;
-    gap: 2em;
-}
-
-.column {
-    flex: 1;
+#matchups .card {
+    max-width: 500px;
+    margin: 0.5rem auto;
 }
