@@ -1,38 +1,134 @@
 {
     "michael": [
-        "San Francisco 49ers",
-        "Kansas City Chiefs",
-        "Baltimore Ravens",
-        "Miami Dolphins",
-        "New York Jets",
-        "Seattle Seahawks",
-        "Houston Texans",
-        "New York Giants",
-        "Tampa Bay Buccaneers",
-        "Minnesota Vikings",
-        "Cleveland Browns",
-        "Indianapolis Colts",
-        "Denver Broncos",
-        "Tennessee Titans",
-        "Atlanta Falcons",
-        "Carolina Panthers"
+        {
+            "name": "San Francisco 49ers",
+            "wins": 3
+        },
+        {
+            "name": "Kansas City Chiefs",
+            "wins": 2
+        },
+        {
+            "name": "Baltimore Ravens",
+            "wins": 4
+        },
+        {
+            "name": "Miami Dolphins",
+            "wins": 3
+        },
+        {
+            "name": "New York Jets",
+            "wins": 1
+        },
+        {
+            "name": "Seattle Seahawks",
+            "wins": 3
+        },
+        {
+            "name": "Houston Texans",
+            "wins": 0
+        },
+        {
+            "name": "New York Giants",
+            "wins": 2
+        },
+        {
+            "name": "Tampa Bay Buccaneers",
+            "wins": 3
+        },
+        {
+            "name": "Minnesota Vikings",
+            "wins": 4
+        },
+        {
+            "name": "Cleveland Browns",
+            "wins": 1
+        },
+        {
+            "name": "Indianapolis Colts",
+            "wins": 2
+        },
+        {
+            "name": "Denver Broncos",
+            "wins": 0
+        },
+        {
+            "name": "Tennessee Titans",
+            "wins": 3
+        },
+        {
+            "name": "Atlanta Falcons",
+            "wins": 1
+        },
+        {
+            "name": "Carolina Panthers",
+            "wins": 2
+        }
     ],
     "zach": [
-        "Buffalo Bills",
-        "Dallas Cowboys",
-        "Philadelphia Eagles",
-        "Cincinnati Bengals",
-        "Jacksonville Jaguars",
-        "Green Bay Packers",
-        "Los Angeles Chargers",
-        "Detroit Lions",
-        "New Orleans Saints",
-        "Pittsburgh Steelers",
-        "Washington Commanders",
-        "Las Vegas Raiders",
-        "Chicago Bears",
-        "New England Patriots",
-        "Arizona Cardinals",
-        "Los Angeles Rams"
+        {
+            "name": "Buffalo Bills",
+            "wins": 3
+        },
+        {
+            "name": "Dallas Cowboys",
+            "wins": 4
+        },
+        {
+            "name": "Philadelphia Eagles",
+            "wins": 3
+        },
+        {
+            "name": "Cincinnati Bengals",
+            "wins": 2
+        },
+        {
+            "name": "Jacksonville Jaguars",
+            "wins": 4
+        },
+        {
+            "name": "Green Bay Packers",
+            "wins": 2
+        },
+        {
+            "name": "Los Angeles Chargers",
+            "wins": 2
+        },
+        {
+            "name": "Detroit Lions",
+            "wins": 1
+        },
+        {
+            "name": "New Orleans Saints",
+            "wins": 3
+        },
+        {
+            "name": "Pittsburgh Steelers",
+            "wins": 2
+        },
+        {
+            "name": "Washington Commanders",
+            "wins": 1
+        },
+        {
+            "name": "Las Vegas Raiders",
+            "wins": 0
+        },
+        {
+            "name": "Chicago Bears",
+            "wins": 1
+        },
+        {
+            "name": "New England Patriots",
+            "wins": 3
+        },
+        {
+            "name": "Arizona Cardinals",
+            "wins": 0
+        },
+        {
+            "name": "Los Angeles Rams",
+            "wins": 2
+        }
     ]
 }

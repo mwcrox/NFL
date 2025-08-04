@@ -1,37 +1,13 @@
 async function loadTeams() {
     try {
-        const draftRes = await fetch('draft.json');
-        const draft = await draftRes.json();
+        const res = await fetch('draft.json');
+        const draft = await res.json();
 
-        const wins = await fetchTeamWins();
-
-        const michaelTeams = draft.michael.map(team => ({
-            name: team.name,
-            wins: wins[team.name] ?? 0
-        }));
-
-        const zachTeams = draft.zach.map(team => ({
-            name: team.name,
-            wins: wins[team.name] ?? 0
-        }));
-
-        renderTeams('michael-teams', michaelTeams);
-        renderTeams('friend-teams', zachTeams);
+        renderTeams('michael-teams', draft.michael);
+        renderTeams('friend-teams', draft.zach);
     } catch (err) {
-        console.error('Error loading teams or wins:', err);
+        console.error('Failed to load draft data:', err);
     }
-}
-
-async function fetchTeamWins() {
-    const res = await fetch('https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4391&s=2024');
-    const data = await res.json();
-
-    const teamWins = {};
-    data.table.forEach(team => {
-        teamWins[team.name] = parseInt(team.win, 10);
-    });
-
-    return teamWins;
 }
 
 function renderTeams(containerId, teams) {
@@ -48,8 +24,9 @@ function showPage(page) {
 
 window.onload = function () {
     setTimeout(() => {
-        document.getElementById('content').classList.remove('hidden');
-        document.getElementById('content').classList.add('fade-in');
+        const content = document.getElementById('content');
+        content.classList.remove('hidden');
+        content.classList.add('fade-in');
         loadTeams();
     }, 2500);
 };
