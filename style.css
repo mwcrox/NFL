@@ -90,8 +90,16 @@ main#content.fade-in {
     /* Prevents squishing on smaller screens */
 }
 
-.team-logo {
-    height: 64px;
-    vertical-align: middle;
-    margin: 0 8px;
+
+.score-display {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.score-display img {
+    height: 128px;
 }
