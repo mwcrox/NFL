@@ -23,7 +23,7 @@ async function loadTeams() {
 }
 
 async function fetchTeamWins() {
-    const res = await fetch('https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4391&s=2025');
+    const res = await fetch('https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4391&s=2024');
     const data = await res.json();
 
     const teamWins = {};
