@@ -74,3 +74,18 @@ main#content.fade-in {
     max-width: 500px;
     margin: 0.5rem auto;
 }
+
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* Optional: makes it responsive */
+}
+
+.team-column {
+    flex: 1;
+    /* Each column takes equal space */
+    min-width: 300px;
+    /* Prevents squishing on smaller screens */
+}
