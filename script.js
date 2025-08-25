@@ -156,7 +156,7 @@ function updateTotalWins() {
 // Render history from JSON
 async function loadHistory(year) {
     try {
-        const res = await fetch(`history/${year}.json`);
+        const res = await fetch(`History/${year}.json`);
         const data = await res.json();
 
         const resultsEl = document.getElementById('history-results');
