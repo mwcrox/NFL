@@ -104,6 +104,13 @@ main#content.fade-in {
     height: 128px;
 }
 
+#history ul {
+    list-style-type: none;
+    /* removes bullets */
+    padding-left: 0;
+    /* removes default indentation */
+}
+
 @media (max-width: 600px) {
     .score-display {
         font-size: 20px;

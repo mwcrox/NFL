@@ -1,0 +1,142 @@
+{
+    "year": 2024,
+    "firstPick": "Michael",
+    "finalScore": {
+        "Zach": 369,
+        "Michael": 384
+    },
+    "teams": {
+        "Zach": [
+            {
+                "team": "Baltimore",
+                "points": 38
+            },
+            {
+                "team": "Detroit",
+                "points": 44
+            },
+            {
+                "team": "Houston",
+                "points": 34
+            },
+            {
+                "team": "Philadelphia",
+                "points": 66
+            },
+            {
+                "team": "Green Bay",
+                "points": 29
+            },
+            {
+                "team": "Cincinnati",
+                "points": 18
+            },
+            {
+                "team": "N.Y. Jets",
+                "points": 10
+            },
+            {
+                "team": "Chicago",
+                "points": 10
+            },
+            {
+                "team": "Tampa Bay",
+                "points": 27
+            },
+            {
+                "team": "Seattle",
+                "points": 20
+            },
+            {
+                "team": "New Orleans",
+                "points": 10
+            },
+            {
+                "team": "Tennessee",
+                "points": 6
+            },
+            {
+                "team": "Minnesota",
+                "points": 35
+            },
+            {
+                "team": "Las Vegas",
+                "points": 8
+            },
+            {
+                "team": "N.Y. Giants",
+                "points": 6
+            },
+            {
+                "team": "New England",
+                "points": 8
+            }
+        ],
+        "Michael": [
+            {
+                "team": "Kansas City",
+                "points": 61
+            },
+            {
+                "team": "San Francisco",
+                "points": 12
+            },
+            {
+                "team": "Dallas",
+                "points": 14
+            },
+            {
+                "team": "Buffalo",
+                "points": 47
+            },
+            {
+                "team": "Atlanta",
+                "points": 16
+            },
+            {
+                "team": "Miami",
+                "points": 16
+            },
+            {
+                "team": "L.A. Rams",
+                "points": 34
+            },
+            {
+                "team": "Denver",
+                "points": 27
+            },
+            {
+                "team": "Jacksonville",
+                "points": 8
+            },
+            {
+                "team": "L.A. Chargers",
+                "points": 29
+            },
+            {
+                "team": "Indianapolis",
+                "points": 16
+            },
+            {
+                "team": "Pittsburgh",
+                "points": 27
+            },
+            {
+                "team": "Arizona",
+                "points": 16
+            },
+            {
+                "team": "Cleveland",
+                "points": 6
+            },
+            {
+                "team": "Washington",
+                "points": 45
+            },
+            {
+                "team": "Carolina",
+                "points": 10
+            }
+        ]
+    }
+}

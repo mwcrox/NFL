@@ -1,10 +1,9 @@
 let draftData = {};
 let scheduleData = {};
+let playoffBonusData = {};
 
 function getCurrentWeekKey() {
     const now = new Date();
-
-    // Convert to EST
     const estNow = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
 
     const regularSeasonStart = new Date("2025-09-03T12:00:00-04:00");
@@ -35,9 +34,6 @@ function getCurrentWeekKey() {
 
     return "Super Bowl";
 }
-
-
-
 
 function updateTeamLists() {
     const michaelEl = document.getElementById('michael-teams');
@@ -97,7 +93,6 @@ function showPage(pageId) {
     document.getElementById('nav-' + pageId).classList.add('active');
 }
 
-// New function: fetch live wins from TheSportsDB and return lookup map
 async function fetchLiveWins() {
     const apiKey = '123';  // Replace with your TheSportsDB API key
     const url = `https://www.thesportsdb.com/api/v1/json/${apiKey}/lookuptable.php?l=4391&s=2025`;
@@ -158,12 +153,61 @@ function updateTotalWins() {
     document.getElementById('total-wins').innerHTML = displayHTML;
 }
 
+// Render history from JSON
+async function loadHistory(year) {
+    try {
+        const res = await fetch(`history/${year}.json`);
+        const data = await res.json();
 
+        const resultsEl = document.getElementById('history-results');
+        resultsEl.innerHTML = '';
 
+        // Final Score header
+        const finalScoreDiv = document.createElement('div');
+        finalScoreDiv.className = 'card final-score';
+        finalScoreDiv.innerHTML = `
+            <h3>${year} Final Score</h3>
+            <p><strong>Michael:</strong> ${data.finalScore.Michael} — <strong>Zach:</strong> ${data.finalScore.Zach}</p>
+            <p><em>First Pick: ${data.firstPick}</em></p>
+        `;
+        resultsEl.appendChild(finalScoreDiv);
+
+        // Michael's Teams
+        const michaelDiv = document.createElement('div');
+        michaelDiv.className = 'team-column';
+        michaelDiv.innerHTML = `<h4>Michael's Team</h4>`;
+        data.teams.Michael.forEach((team, index) => {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.textContent = `${index + 1}. ${team.team} — ${team.points} points`;
+            michaelDiv.appendChild(div);
+        });
+
+        // Zach's Teams
+        const zachDiv = document.createElement('div');
+        zachDiv.className = 'team-column';
+        zachDiv.innerHTML = `<h4>Zach's Team</h4>`;
+        data.teams.Zach.forEach((team, index) => {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.textContent = `${index + 1}. ${team.team} — ${team.points} points`;
+            zachDiv.appendChild(div);
+        });
+
+        // Wrap both columns
+        const container = document.createElement('div');
+        container.className = 'teams-container';
+        container.appendChild(michaelDiv);
+        container.appendChild(zachDiv);
+        resultsEl.appendChild(container);
+
+    } catch (err) {
+        console.error(`Failed to load history for ${year}:`, err);
+    }
+}
 
 async function init() {
     try {
-        // Load local JSON data
         const [draftRes, scheduleRes, playoffBonusRes] = await Promise.all([
             fetch('draft.json'),
             fetch('schedule.json'),
@@ -174,10 +218,8 @@ async function init() {
         scheduleData = await scheduleRes.json();
         playoffBonusData = await playoffBonusRes.json();
 
-        // Fetch live win totals
         const liveWins = await fetchLiveWins();
 
-        // Update draft data with wins
         draftData.michael.forEach(team => {
             team.wins = liveWins[team.name] ?? 0;
         });
@@ -186,13 +228,11 @@ async function init() {
             team.wins = liveWins[team.name] ?? 0;
         });
 
-        // Update all page content
-        updateTotalWins();        // now includes playoff bonuses if implemented
+        updateTotalWins();
         updateCurrentWeekDisplay();
         updateTeamLists();
         updateKeyMatchups();
 
-        // Fade-in animation
         setTimeout(() => {
             document.getElementById('content').classList.add('fade-in');
         }, 2500);
@@ -201,7 +241,6 @@ async function init() {
         console.error('Failed to load data:', error);
     }
 }
-
 
 window.onload = () => {
     init();
@@ -214,5 +253,18 @@ window.onload = () => {
     document.getElementById('nav-teams').addEventListener('click', (e) => {
         e.preventDefault();
         showPage('teams');
+    });
+
+    document.getElementById('nav-history').addEventListener('click', (e) => {
+        e.preventDefault();
+        showPage('history');
+    });
+
+    document.querySelectorAll('.history-year').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const year = e.target.dataset.year;
+            loadHistory(year);
+        });
     });
 };
