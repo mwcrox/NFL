@@ -93,28 +93,6 @@ function showPage(pageId) {
     document.getElementById('nav-' + pageId).classList.add('active');
 }
 
-async function fetchLiveWins() {
-    const apiKey = '123';  // Replace with your TheSportsDB API key
-    const url = `https://www.thesportsdb.com/api/v1/json/${apiKey}/lookuptable.php?l=4391&s=2025`;
-
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-
-        const teamWinsLookup = {};
-        if (data.table) {
-            data.table.forEach(team => {
-                teamWinsLookup[team.name] = parseInt(team.win, 10);
-            });
-        }
-
-        return teamWinsLookup;
-    } catch (err) {
-        console.error('Failed to fetch live wins:', err);
-        return {};
-    }
-}
-
 function getBonusPoints(teamName) {
     let bonus = 0;
 
@@ -162,7 +140,6 @@ async function loadHistory(year) {
         const resultsEl = document.getElementById('history-results');
         resultsEl.innerHTML = '';
 
-        // Final Score header
         const finalScoreDiv = document.createElement('div');
         finalScoreDiv.className = 'card final-score';
         finalScoreDiv.innerHTML = `
@@ -172,7 +149,6 @@ async function loadHistory(year) {
         `;
         resultsEl.appendChild(finalScoreDiv);
 
-        // Michael's Teams
         const michaelDiv = document.createElement('div');
         michaelDiv.className = 'team-column';
         michaelDiv.innerHTML = `<h4>Michael's Team</h4>`;
@@ -183,7 +159,6 @@ async function loadHistory(year) {
             michaelDiv.appendChild(div);
         });
 
-        // Zach's Teams
         const zachDiv = document.createElement('div');
         zachDiv.className = 'team-column';
         zachDiv.innerHTML = `<h4>Zach's Team</h4>`;
@@ -194,7 +169,6 @@ async function loadHistory(year) {
             zachDiv.appendChild(div);
         });
 
-        // Wrap both columns
         const container = document.createElement('div');
         container.className = 'teams-container';
         container.appendChild(michaelDiv);
@@ -208,24 +182,35 @@ async function loadHistory(year) {
 
 async function init() {
     try {
-        const [draftRes, scheduleRes, playoffBonusRes] = await Promise.all([
+        const [draftRes, scheduleRes, playoffBonusRes, teamWinsRes] = await Promise.all([
             fetch('draft.json'),
             fetch('schedule.json'),
-            fetch('playoffBonus.json')
+            fetch('playoffBonus.json'),
+            fetch('teamWins.json')  // Grouped by AFC/NFC
         ]);
 
         draftData = await draftRes.json();
         scheduleData = await scheduleRes.json();
         playoffBonusData = await playoffBonusRes.json();
+        const teamWinsData = await teamWinsRes.json();
 
-        const liveWins = await fetchLiveWins();
+        // Flatten the grouped structure into a lookup object
+        const teamWinsLookup = {};
+        Object.values(teamWinsData).forEach(conference => {
+            Object.values(conference).forEach(division => {
+                division.forEach(team => {
+                    teamWinsLookup[team.name] = team.wins;
+                });
+            });
+        });
 
+        // Update draft data with wins from the JSON
         draftData.michael.forEach(team => {
-            team.wins = liveWins[team.name] ?? 0;
+            team.wins = teamWinsLookup[team.name] ?? 0;
         });
 
         draftData.zach.forEach(team => {
-            team.wins = liveWins[team.name] ?? 0;
+            team.wins = teamWinsLookup[team.name] ?? 0;
         });
 
         updateTotalWins();
@@ -241,6 +226,7 @@ async function init() {
         console.error('Failed to load data:', error);
     }
 }
+
 
 window.onload = () => {
     init();

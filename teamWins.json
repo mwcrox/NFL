@@ -1,0 +1,150 @@
+{
+    "AFC": {
+        "East": [
+            {
+                "name": "Buffalo Bills",
+                "wins": 0
+            },
+            {
+                "name": "Miami Dolphins",
+                "wins": 0
+            },
+            {
+                "name": "New England Patriots",
+                "wins": 0
+            },
+            {
+                "name": "New York Jets",
+                "wins": 0
+            }
+        ],
+        "North": [
+            {
+                "name": "Baltimore Ravens",
+                "wins": 0
+            },
+            {
+                "name": "Cincinnati Bengals",
+                "wins": 0
+            },
+            {
+                "name": "Cleveland Browns",
+                "wins": 0
+            },
+            {
+                "name": "Pittsburgh Steelers",
+                "wins": 0
+            }
+        ],
+        "South": [
+            {
+                "name": "Houston Texans",
+                "wins": 0
+            },
+            {
+                "name": "Indianapolis Colts",
+                "wins": 0
+            },
+            {
+                "name": "Jacksonville Jaguars",
+                "wins": 0
+            },
+            {
+                "name": "Tennessee Titans",
+                "wins": 0
+            }
+        ],
+        "West": [
+            {
+                "name": "Denver Broncos",
+                "wins": 0
+            },
+            {
+                "name": "Kansas City Chiefs",
+                "wins": 0
+            },
+            {
+                "name": "Las Vegas Raiders",
+                "wins": 0
+            },
+            {
+                "name": "Los Angeles Chargers",
+                "wins": 0
+            }
+        ]
+    },
+    "NFC": {
+        "East": [
+            {
+                "name": "Dallas Cowboys",
+                "wins": 0
+            },
+            {
+                "name": "New York Giants",
+                "wins": 0
+            },
+            {
+                "name": "Philadelphia Eagles",
+                "wins": 1
+            },
+            {
+                "name": "Washington Commanders",
+                "wins": 0
+            }
+        ],
+        "North": [
+            {
+                "name": "Chicago Bears",
+                "wins": 0
+            },
+            {
+                "name": "Detroit Lions",
+                "wins": 0
+            },
+            {
+                "name": "Green Bay Packers",
+                "wins": 0
+            },
+            {
+                "name": "Minnesota Vikings",
+                "wins": 0
+            }
+        ],
+        "South": [
+            {
+                "name": "Atlanta Falcons",
+                "wins": 0
+            },
+            {
+                "name": "Carolina Panthers",
+                "wins": 0
+            },
+            {
+                "name": "New Orleans Saints",
+                "wins": 0
+            },
+            {
+                "name": "Tampa Bay Buccaneers",
+                "wins": 0
+            }
+        ],
+        "West": [
+            {
+                "name": "Arizona Cardinals",
+                "wins": 0
+            },
+            {
+                "name": "Los Angeles Rams",
+                "wins": 0
+            },
+            {
+                "name": "San Francisco 49ers",
+                "wins": 0
+            },
+            {
+                "name": "Seattle Seahawks",
+                "wins": 0
+            }
+        ]
+    }
+}
