@@ -69,7 +69,7 @@
             },
             {
                 "name": "Los Angeles Chargers",
-                "wins": 1
+                "wins": 2
             }
         ]
     },
@@ -125,13 +125,13 @@
             },
             {
                 "name": "Tampa Bay Buccaneers",
-                "wins": 1
+                "wins": 2
             }
         ],
         "West": [
             {
                 "name": "Arizona Cardinals",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Los Angeles Rams",
