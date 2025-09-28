@@ -3,7 +3,7 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Miami Dolphins",
@@ -11,7 +11,7 @@
             },
             {
                 "name": "New England Patriots",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "New York Jets",
@@ -39,7 +39,7 @@
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Indianapolis Colts",
@@ -47,7 +47,7 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Tennessee Titans",
@@ -61,7 +61,7 @@
             },
             {
                 "name": "Kansas City Chiefs",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Las Vegas Raiders",
@@ -81,11 +81,11 @@
             },
             {
                 "name": "New York Giants",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Philadelphia Eagles",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Washington Commanders",
@@ -95,11 +95,11 @@
         "North": [
             {
                 "name": "Chicago Bears",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Detroit Lions",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Green Bay Packers",
@@ -113,7 +113,7 @@
         "South": [
             {
                 "name": "Atlanta Falcons",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Carolina Panthers",
@@ -135,7 +135,7 @@
             },
             {
                 "name": "Los Angeles Rams",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "San Francisco 49ers",
