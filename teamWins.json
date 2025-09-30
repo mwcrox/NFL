@@ -7,7 +7,7 @@
             },
             {
                 "name": "Miami Dolphins",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "New England Patriots",
@@ -57,7 +57,7 @@
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Kansas City Chiefs",
