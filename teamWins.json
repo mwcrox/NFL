@@ -39,11 +39,11 @@
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Indianapolis Colts",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Jacksonville Jaguars",
@@ -51,13 +51,13 @@
             },
             {
                 "name": "Tennessee Titans",
-                "wins": 0
+                "wins": 1
             }
         ],
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Kansas City Chiefs",
@@ -77,7 +77,7 @@
         "East": [
             {
                 "name": "Dallas Cowboys",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "New York Giants",
@@ -89,7 +89,7 @@
             },
             {
                 "name": "Washington Commanders",
-                "wins": 2
+                "wins": 3
             }
         ],
         "North": [
@@ -99,7 +99,7 @@
             },
             {
                 "name": "Detroit Lions",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Green Bay Packers",
@@ -107,7 +107,7 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 2
+                "wins": 3
             }
         ],
         "South": [
@@ -117,15 +117,15 @@
             },
             {
                 "name": "Carolina Panthers",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Tampa Bay Buccaneers",
-                "wins": 3
+                "wins": 4
             }
         ],
         "West": [
