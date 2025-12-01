@@ -3,11 +3,11 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 7
+                "wins": 8
             },
             {
                 "name": "Miami Dolphins",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "New England Patriots",
@@ -15,7 +15,7 @@
             },
             {
                 "name": "New York Jets",
-                "wins": 2
+                "wins": 3
             }
         ],
         "North": [
@@ -39,7 +39,7 @@
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 6
+                "wins": 7
             },
             {
                 "name": "Indianapolis Colts",
@@ -47,7 +47,7 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 7
+                "wins": 8
             },
             {
                 "name": "Tennessee Titans",
@@ -57,7 +57,7 @@
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 9
+                "wins": 10
             },
             {
                 "name": "Kansas City Chiefs",
@@ -69,7 +69,7 @@
             },
             {
                 "name": "Los Angeles Chargers",
-                "wins": 7
+                "wins": 8
             }
         ]
     },
@@ -117,7 +117,7 @@
             },
             {
                 "name": "Carolina Panthers",
-                "wins": 6
+                "wins": 7
             },
             {
                 "name": "New Orleans Saints",
@@ -125,7 +125,7 @@
             },
             {
                 "name": "Tampa Bay Buccaneers",
-                "wins": 6
+                "wins": 7
             }
         ],
         "West": [
@@ -139,11 +139,11 @@
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 8
+                "wins": 9
             },
             {
                 "name": "Seattle Seahawks",
-                "wins": 8
+                "wins": 9
             }
         ]
     }
