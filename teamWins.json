@@ -3,11 +3,11 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 8
+                "wins": 9
             },
             {
                 "name": "Miami Dolphins",
-                "wins": 5
+                "wins": 6
             },
             {
                 "name": "New England Patriots",
@@ -33,7 +33,7 @@
             },
             {
                 "name": "Pittsburgh Steelers",
-                "wins": 6
+                "wins": 7
             }
         ],
         "South": [
@@ -47,17 +47,17 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 8
+                "wins": 9
             },
             {
                 "name": "Tennessee Titans",
-                "wins": 1
+                "wins": 2
             }
         ],
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 10
+                "wins": 11
             },
             {
                 "name": "Kansas City Chiefs",
@@ -103,11 +103,11 @@
             },
             {
                 "name": "Green Bay Packers",
-                "wins": 8
+                "wins": 9
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 4
+                "wins": 5
             }
         ],
         "South": [
@@ -121,7 +121,7 @@
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Tampa Bay Buccaneers",
@@ -135,7 +135,7 @@
             },
             {
                 "name": "Los Angeles Rams",
-                "wins": 9
+                "wins": 10
             },
             {
                 "name": "San Francisco 49ers",
@@ -143,7 +143,7 @@
             },
             {
                 "name": "Seattle Seahawks",
-                "wins": 9
+                "wins": 10
             }
         ]
     }
