@@ -3,7 +3,7 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 10
+                "wins": 11
             },
             {
                 "name": "Miami Dolphins",
@@ -11,7 +11,7 @@
             },
             {
                 "name": "New England Patriots",
-                "wins": 11
+                "wins": 12
             },
             {
                 "name": "New York Jets",
@@ -25,7 +25,7 @@
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "Cleveland Browns",
@@ -33,13 +33,13 @@
             },
             {
                 "name": "Pittsburgh Steelers",
-                "wins": 8
+                "wins": 9
             }
         ],
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 9
+                "wins": 10
             },
             {
                 "name": "Indianapolis Colts",
@@ -47,11 +47,11 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 10
+                "wins": 11
             },
             {
                 "name": "Tennessee Titans",
-                "wins": 2
+                "wins": 3
             }
         ],
         "West": [
@@ -69,7 +69,7 @@
             },
             {
                 "name": "Los Angeles Chargers",
-                "wins": 10
+                "wins": 11
             }
         ]
     },
@@ -107,21 +107,21 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 6
+                "wins": 7
             }
         ],
         "South": [
             {
                 "name": "Atlanta Falcons",
-                "wins": 5
+                "wins": 6
             },
             {
                 "name": "Carolina Panthers",
-                "wins": 7
+                "wins": 8
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "Tampa Bay Buccaneers",
