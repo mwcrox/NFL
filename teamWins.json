@@ -57,7 +57,7 @@
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 12
+                "wins": 13
             },
             {
                 "name": "Kansas City Chiefs",
@@ -77,7 +77,7 @@
         "East": [
             {
                 "name": "Dallas Cowboys",
-                "wins": 6
+                "wins": 7
             },
             {
                 "name": "New York Giants",
@@ -107,7 +107,7 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 7
+                "wins": 8
             }
         ],
         "South": [
