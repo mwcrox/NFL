@@ -7,11 +7,11 @@
             },
             {
                 "name": "Miami Dolphins",
-                "wins": 6
+                "wins": 7
             },
             {
                 "name": "New England Patriots",
-                "wins": 12
+                "wins": 13
             },
             {
                 "name": "New York Jets",
@@ -25,11 +25,11 @@
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 5
+                "wins": 6
             },
             {
                 "name": "Cleveland Browns",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Pittsburgh Steelers",
@@ -47,7 +47,7 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 11
+                "wins": 12
             },
             {
                 "name": "Tennessee Titans",
@@ -81,11 +81,11 @@
             },
             {
                 "name": "New York Giants",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Philadelphia Eagles",
-                "wins": 10
+                "wins": 11
             },
             {
                 "name": "Washington Commanders",
@@ -121,7 +121,7 @@
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 5
+                "wins": 6
             },
             {
                 "name": "Tampa Bay Buccaneers",
@@ -139,11 +139,11 @@
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 11
+                "wins": 12
             },
             {
                 "name": "Seattle Seahawks",
-                "wins": 12
+                "wins": 13
             }
         ]
     }
