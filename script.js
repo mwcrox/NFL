@@ -24,10 +24,18 @@ function getCurrentWeekKey() {
         { key: "Super Bowl", start: new Date("2026-01-26T00:00:00-05:00") }
     ];
 
+    // ✅ NEW: Keep showing Week 18 until Wild Card Round officially starts
+    if (estNow < playoffs[0].start) return "Week 18";
+
+    // ✅ FIX: Only return a playoff round if that round has started AND the next round hasn't started yet
     for (let i = 0; i < playoffs.length; i++) {
         const thisRound = playoffs[i];
         const nextRound = playoffs[i + 1];
-        if (!nextRound || estNow < nextRound.start) {
+
+        const afterThisRoundStarts = estNow >= thisRound.start;
+        const beforeNextRoundStarts = !nextRound || estNow < nextRound.start;
+
+        if (afterThisRoundStarts && beforeNextRoundStarts) {
             return thisRound.key;
         }
     }
