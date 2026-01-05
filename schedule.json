@@ -1089,28 +1089,28 @@
     ],
     "Wild Card Round": [
         {
-            "home": "New England Patriots",
-            "away": "Los Angeles Chargers"
-        },
-        {
-            "home": "Jacksonville Jaguars",
-            "away": "Buffalo Bills"
-        },
-        {
-            "home": "AFC 4",
-            "away": "Houston Texans"
+            "home": "Carolina Panthers",
+            "away": "Los Angeles Rams"
         },
         {
             "home": "Chicago Bears",
             "away": "Green Bay Packers"
         },
         {
+            "home": "Jacksonville Jaguars",
+            "away": "Buffalo Bills"
+        },
+        {
             "home": "Philadelphia Eagles",
             "away": "San Francisco 49ers"
         },
         {
-            "home": "Carolina Panthers",
-            "away": "Los Angeles Rams"
+            "home": "New England Patriots",
+            "away": "Los Angeles Chargers"
+        },
+        {
+            "home": "Pittsburgh Steelers",
+            "away": "Houston Texans"
         }
     ],
     "Divisional Round": [
