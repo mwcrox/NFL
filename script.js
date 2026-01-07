@@ -606,6 +606,204 @@ function handleWhatIfPick(ds) {
     }
 }
 
+/*********************************
+ * WHAT-IF: ODDS (BRUTE FORCE)
+ *********************************/
+
+// Deep clone helper (structuredClone is great if available)
+function cloneState(obj) {
+    if (typeof structuredClone === "function") return structuredClone(obj);
+    return JSON.parse(JSON.stringify(obj));
+}
+
+function getDivMatchupsForConf(confState) {
+    const seeds = confState.seeds || [];
+    const wcPicked = (confState.wcWinners || []).filter(Boolean);
+    if (wcPicked.length !== 3) return null;
+    return divisionalMatchupsReseed(seeds, wcPicked);
+}
+
+function getConfTeamsForConf(confState) {
+    const divWinners = (confState.divWinners || []).filter(Boolean);
+    if (divWinners.length !== 2) return null;
+    return [divWinners[0], divWinners[1]];
+}
+
+function findNextDecision(state) {
+    // 1) AFC WC
+    for (let i = 0; i < 3; i++) {
+        if (!state.afc.wcWinners[i]) {
+            const wc = wildcardMatchupsFromSeeds(state.afc.seeds);
+            return { round: "wc", conf: "AFC", idx: i, teams: [wc[i].a, wc[i].b] };
+        }
+    }
+
+    // 2) NFC WC
+    for (let i = 0; i < 3; i++) {
+        if (!state.nfc.wcWinners[i]) {
+            const wc = wildcardMatchupsFromSeeds(state.nfc.seeds);
+            return { round: "wc", conf: "NFC", idx: i, teams: [wc[i].a, wc[i].b] };
+        }
+    }
+
+    // 3) AFC Div
+    const afcDivMatchups = getDivMatchupsForConf(state.afc);
+    if (afcDivMatchups) {
+        for (let i = 0; i < 2; i++) {
+            if (!state.afc.divWinners[i]) {
+                const m = afcDivMatchups[i];
+                return { round: "div", conf: "AFC", idx: i, teams: [m.a, m.b] };
+            }
+        }
+    }
+
+    // 4) NFC Div
+    const nfcDivMatchups = getDivMatchupsForConf(state.nfc);
+    if (nfcDivMatchups) {
+        for (let i = 0; i < 2; i++) {
+            if (!state.nfc.divWinners[i]) {
+                const m = nfcDivMatchups[i];
+                return { round: "div", conf: "NFC", idx: i, teams: [m.a, m.b] };
+            }
+        }
+    }
+
+    // 5) AFC Conf
+    if (!state.afc.confWinner) {
+        const teams = getConfTeamsForConf(state.afc);
+        if (teams) return { round: "conf", conf: "AFC", teams };
+    }
+
+    // 6) NFC Conf
+    if (!state.nfc.confWinner) {
+        const teams = getConfTeamsForConf(state.nfc);
+        if (teams) return { round: "conf", conf: "NFC", teams };
+    }
+
+    // 7) Super Bowl
+    const afcWinner = state.afc.confWinner;
+    const nfcWinner = state.nfc.confWinner;
+    if (afcWinner && nfcWinner && !state.superBowl.winner) {
+        return { round: "sb", teams: [afcWinner, nfcWinner] };
+    }
+
+    return null;
+}
+
+function applyPick(state, decision, pickedTeam) {
+    if (decision.round === "wc") {
+        const conf = decision.conf === "AFC" ? state.afc : state.nfc;
+        conf.wcWinners[decision.idx] = pickedTeam;
+
+        // Reset downstream (same behavior as your click handler)
+        conf.divWinners = [null, null];
+        conf.confWinner = null;
+        state.superBowl.winner = null;
+        return;
+    }
+
+    if (decision.round === "div") {
+        const conf = decision.conf === "AFC" ? state.afc : state.nfc;
+        conf.divWinners[decision.idx] = pickedTeam;
+
+        conf.confWinner = null;
+        state.superBowl.winner = null;
+        return;
+    }
+
+    if (decision.round === "conf") {
+        const conf = decision.conf === "AFC" ? state.afc : state.nfc;
+        conf.confWinner = pickedTeam;
+
+        state.superBowl.winner = null;
+        return;
+    }
+
+    if (decision.round === "sb") {
+        state.superBowl.winner = pickedTeam;
+        return;
+    }
+}
+
+// Enumerate all completions consistent with current picks (each undecided game 50/50)
+function computeWinOddsFromState(currentState) {
+    if (!currentState) return { michaelPct: 0, zachPct: 0, tiePct: 0, total: 0 };
+
+    let michaelWins = 0;
+    let zachWins = 0;
+    let ties = 0;
+    let total = 0;
+
+    function computeWhatIfTotalsWithState(simState) {
+        const old = whatIfState;
+        whatIfState = simState;
+        const totals = computeWhatIfTotals();
+        whatIfState = old;
+        return totals;
+    }
+
+    function dfs(state) {
+        const decision = findNextDecision(state);
+
+        if (!decision) {
+            // Only count scenarios that have a Super Bowl winner
+            if (!state.superBowl?.winner) return;
+
+            total++;
+            const { michaelTotal, zachTotal } = computeWhatIfTotalsWithState(state);
+            if (michaelTotal > zachTotal) michaelWins++;
+            else if (zachTotal > michaelTotal) zachWins++;
+            else ties++;
+            return;
+        }
+
+        for (const team of decision.teams) {
+            if (!team || team === "TBD") continue;
+            const next = cloneState(state);
+            applyPick(next, decision, team);
+            dfs(next);
+        }
+    }
+
+    dfs(cloneState(currentState));
+
+    if (total === 0) return { michaelPct: 0, zachPct: 0, tiePct: 0, total: 0 };
+
+    return {
+        michaelPct: (michaelWins / total) * 100,
+        zachPct: (zachWins / total) * 100,
+        tiePct: (ties / total) * 100,
+        total
+    };
+}
+
+function renderWhatIfOdds() {
+    const el = safeEl("whatif-odds");
+    if (!el) return;
+
+    if (!whatIfState) {
+        el.innerHTML = ``;
+        return;
+    }
+
+    const { michaelPct, zachPct, tiePct, total } = computeWinOddsFromState(whatIfState);
+
+    if (total === 0) {
+        el.innerHTML = `Win Odds: Complete more picks to calculate.`;
+        return;
+    }
+
+    el.innerHTML = `
+      <div style="font-size: 16px;">
+        <strong>Win Odds</strong> (all remaining outcomes equally likely)<br/>
+        Michael: <strong>${michaelPct.toFixed(1)}%</strong> &nbsp; | &nbsp;
+        Zach: <strong>${zachPct.toFixed(1)}%</strong>
+        ${tiePct > 0 ? `&nbsp; | &nbsp; Tie: <strong>${tiePct.toFixed(1)}%</strong>` : ""}
+        <br/><span style="font-size: 12px; opacity: 0.8;">Scenarios evaluated: ${total}</span>
+      </div>
+    `;
+}
+
 function renderWhatIf() {
     if (!whatIfState) return;
 
@@ -623,6 +821,9 @@ function renderWhatIf() {
 
     renderSuperBowl();
     renderWhatIfScore();
+
+    // ✅ NEW: recompute odds every time bracket changes
+    renderWhatIfOdds();
 }
 
 
