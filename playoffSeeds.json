@@ -1,0 +1,63 @@
+{
+    "season": 2025,
+    "AFC": [
+        {
+            "seed": 1,
+            "team": "Denver Broncos"
+        },
+        {
+            "seed": 2,
+            "team": "New England Patriots"
+        },
+        {
+            "seed": 3,
+            "team": "Jacksonville Jaguars"
+        },
+        {
+            "seed": 4,
+            "team": "Pittsburgh Steelers"
+        },
+        {
+            "seed": 5,
+            "team": "Houston Texans"
+        },
+        {
+            "seed": 6,
+            "team": "Buffalo Bills"
+        },
+        {
+            "seed": 7,
+            "team": "Los Angeles Chargers"
+        }
+    ],
+    "NFC": [
+        {
+            "seed": 1,
+            "team": "Seattle Seahawks"
+        },
+        {
+            "seed": 2,
+            "team": "Chicago Bears"
+        },
+        {
+            "seed": 3,
+            "team": "Philadelphia Eagles"
+        },
+        {
+            "seed": 4,
+            "team": "Carolina Panthers"
+        },
+        {
+            "seed": 5,
+            "team": "Los Angeles Rams"
+        },
+        {
+            "seed": 6,
+            "team": "San Francisco 49ers"
+        },
+        {
+            "seed": 7,
+            "team": "Green Bay Packers"
+        }
+    ]
+}

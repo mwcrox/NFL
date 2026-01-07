@@ -15,7 +15,6 @@ body {
 
 header {
     background-color: rgba(30, 58, 138, 0.9);
-    /* navy-ish */
     padding: 1rem;
 }
 
@@ -35,7 +34,6 @@ nav {
 
 .nav-link.active {
     border-bottom: 2px solid #facc15;
-    /* bright yellow underline */
     padding-bottom: 0.2rem;
 }
 
@@ -45,7 +43,7 @@ main#content {
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    max-width: 900px;
+    max-width: 1400px;
     margin: 1rem auto 3rem;
     border-radius: 8px;
 }
@@ -67,7 +65,7 @@ main#content.fade-in {
     padding: 1rem;
     margin: 0.5rem auto;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 #matchups .card {
@@ -80,16 +78,12 @@ main#content.fade-in {
     justify-content: space-between;
     gap: 2rem;
     flex-wrap: wrap;
-    /* Optional: makes it responsive */
 }
 
 .team-column {
     flex: 1;
-    /* Each column takes equal space */
     min-width: 300px;
-    /* Prevents squishing on smaller screens */
 }
-
 
 .score-display {
     font-size: 32px;
@@ -106,21 +100,164 @@ main#content.fade-in {
 
 #history ul {
     list-style-type: none;
-    /* removes bullets */
     padding-left: 0;
-    /* removes default indentation */
 }
 
 @media (max-width: 600px) {
     .score-display {
         font-size: 20px;
-        /* slightly smaller on mobile */
         gap: 8px;
-        /* less spacing between elements */
     }
 
     .score-display img {
         height: 72px;
-        /* smaller logo for phones */
+    }
+}
+
+/* ----------------------------
+   WHAT-IF LAYOUT
+---------------------------- */
+
+.whatif-layout {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.whatif-side {
+    flex: 1;
+    min-width: 320px;
+}
+
+.whatif-center {
+    flex: 0 0 300px;
+    min-width: 280px;
+}
+
+@media (max-width: 950px) {
+    .whatif-center {
+        flex: 1;
+        min-width: 320px;
+        order: 3;
+        /* center drops below on small screens */
+    }
+}
+
+/* ----------------------------
+   WHAT-IF BRACKET STYLES
+---------------------------- */
+
+.whatif-round {
+    margin: 12px 0;
+}
+
+.whatif-round h4 {
+    margin: 10px 0 6px;
+}
+
+.matchup-card {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.matchup-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.matchup-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.matchup-row.selected {
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.matchup-card.locked .matchup-row {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.seed {
+    opacity: 0.75;
+    margin-right: 8px;
+}
+
+.small-note {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 12px;
+}
+
+.btn {
+    background: rgba(250, 204, 21, 0.95);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(0.95);
+}
+
+.whatif-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(170px, 1fr));
+    gap: 14px;
+
+    /* The grid block itself is centered */
+    width: fit-content;
+    max-width: 100%;
+    margin: 16px auto 0;
+
+    /* Prevent weird wrapping */
+    overflow-x: auto;
+    padding-bottom: 8px;
+
+    /* KEY: align columns to same top */
+    align-items: start;
+}
+
+.whatif-col {
+    display: flex;
+    flex-direction: column;
+
+    /* KEY: all columns start from same vertical origin */
+    align-items: stretch;
+}
+
+.whatif-col h3,
+.whatif-col h4 {
+    text-align: center;
+}
+
+.whatif-center-col {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 10px;
+}
+
+/* Responsive: stack nicely on small screens */
+@media (max-width: 1100px) {
+    .whatif-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+
+    .whatif-center-col {
+        border: none;
+        padding: 0;
     }
 }

@@ -14,6 +14,7 @@
             <a href="#" id="nav-home" class="nav-link active">Home</a>
             <a href="#" id="nav-teams" class="nav-link">Teams</a>
             <a href="#" id="nav-history" class="nav-link">History</a>
+            <a href="#" id="nav-whatif" class="nav-link">What if?</a>
         </nav>
     </header>
 
@@ -58,9 +59,71 @@
                 <li><a href="#" class="history-year" data-year="2022">2022 Results</a></li>
             </ul>
 
-            <!-- Draft results for selected year will be displayed here -->
             <div id="history-results"></div>
         </section>
+
+        <!-- What If Page -->
+        <section id="whatif" class="page">
+            <h2>What if?</h2>
+
+            <div id="whatif-score" class="score-display"></div>
+
+            <div class="whatif-grid">
+                <!-- AFC side (left -> center) -->
+                <div class="whatif-col">
+                    <h3>AFC</h3>
+                    <h4>Wild Card</h4>
+                    <div id="whatif-afc-wc"></div>
+                </div>
+
+                <div class="whatif-col">
+                    <h3>&nbsp;</h3>
+                    <h4>Divisional</h4>
+                    <div id="whatif-afc-div"></div>
+                </div>
+
+                <div class="whatif-col">
+                    <h3>&nbsp;</h3>
+                    <h4>Conf. Champ</h4>
+                    <div id="whatif-afc-conf"></div>
+                </div>
+
+                <!-- Super Bowl center -->
+                <div class="whatif-col whatif-center-col">
+                    <h3>Super Bowl</h3>
+                    <div id="whatif-superbowl"></div>
+                    <div style="margin-top: 12px;">
+                        <button id="whatif-reset" class="btn">Reset What-if</button>
+                    </div>
+                </div>
+
+                <!-- NFC side (center -> right) -->
+                <div class="whatif-col">
+                    <h3>&nbsp;</h3>
+                    <h4>Conf. Champ</h4>
+                    <div id="whatif-nfc-conf"></div>
+                </div>
+
+                <div class="whatif-col">
+                    <h3>&nbsp;</h3>
+                    <h4>Divisional</h4>
+                    <div id="whatif-nfc-div"></div>
+                </div>
+
+                <div class="whatif-col">
+                    <h3>NFC</h3>
+                    <h4>Wild Card</h4>
+                    <div id="whatif-nfc-wc"></div>
+                </div>
+            </div>
+
+            <p class="small-note">
+                +7 playoffs, +7 divisional, +7 conference championship appearance, +10 conference champ win, +7 Super
+                Bowl win.
+            </p>
+        </section>
+
+
     </main>
 
     <script src="script.js"></script>
