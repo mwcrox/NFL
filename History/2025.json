@@ -1,0 +1,142 @@
+{
+  "year": 2025,
+  "firstPick": "Zach",
+  "finalScore": {
+    "Zach": 357,
+    "Michael": 394
+  },
+  "teams": {
+    "Zach": [
+      {
+        "team": "Buffalo Bills",
+        "points": 38
+      },
+      {
+        "team": "Philadelphia Eagles",
+        "points": 29
+      },
+      {
+        "team": "Baltimore Ravens",
+        "points": 16
+      },
+      {
+        "team": "San Francisco 49ers",
+        "points": 38
+      },
+      {
+        "team": "Detroit Lions",
+        "points": 18
+      },
+      {
+        "team": "Tampa Bay Buccaneers",
+        "points": 16
+      },
+      {
+        "team": "Los Angeles Chargers",
+        "points": 29
+      },
+      {
+        "team": "Dallas Cowboys",
+        "points": 14
+      },
+      {
+        "team": "Minnesota Vikings",
+        "points": 18
+      },
+      {
+        "team": "Arizona Cardinals",
+        "points": 6
+      },
+      {
+        "team": "Chicago Bears",
+        "points": 36
+      },
+      {
+        "team": "Atlanta Falcons",
+        "points": 16
+      },
+      {
+        "team": "New England Patriots",
+        "points": 59
+      },
+      {
+        "team": "Las Vegas Raiders",
+        "points": 6
+      },
+      {
+        "team": "New York Giants",
+        "points": 8
+      },
+      {
+        "team": "Cleveland Browns",
+        "points": 10
+      }
+    ],
+    "Michael": [
+      {
+        "team": "Kansas City Chiefs",
+        "points": 12
+      },
+      {
+        "team": "Green Bay Packers",
+        "points": 25
+      },
+      {
+        "team": "Los Angeles Rams",
+        "points": 45
+      },
+      {
+        "team": "Houston Texans",
+        "points": 38
+      },
+      {
+        "team": "Washington Commanders",
+        "points": 10
+      },
+      {
+        "team": "Cincinnati Bengals",
+        "points": 12
+      },
+      {
+        "team": "Pittsburgh Steelers",
+        "points": 27
+      },
+      {
+        "team": "Denver Broncos",
+        "points": 49
+      },
+      {
+        "team": "Seattle Seahawks",
+        "points": 66
+      },
+      {
+        "team": "Jacksonville Jaguars",
+        "points": 33
+      },
+      {
+        "team": "Miami Dolphins",
+        "points": 14
+      },
+      {
+        "team": "New York Jets",
+        "points": 6
+      },
+      {
+        "team": "Carolina Panthers",
+        "points": 23
+      },
+      {
+        "team": "Tennessee Titans",
+        "points": 6
+      },
+      {
+        "team": "New Orleans Saints",
+        "points": 12
+      },
+      {
+        "team": "Indianapolis Colts",
+        "points": 16
+      }
+    ]
+  }
+}
