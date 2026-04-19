@@ -18,10 +18,27 @@ header {
     padding: 1rem;
 }
 
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 nav {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.btn.small {
+    font-size: 0.9rem;
+    padding: 8px 12px;
 }
 
 .nav-link {
@@ -215,37 +232,64 @@ main#content.fade-in {
 
 .whatif-grid {
     display: grid;
-    grid-template-columns: repeat(7, minmax(170px, 1fr));
-    gap: 14px;
-
-    /* The grid block itself is centered */
-    width: fit-content;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    gap: 12px;
+    width: 100%;
     max-width: 100%;
     margin: 16px auto 0;
-
-    /* Prevent weird wrapping */
-    overflow-x: auto;
+    overflow-x: hidden;
     padding-bottom: 8px;
-
-    /* KEY: align columns to same top */
     align-items: start;
+    box-sizing: border-box;
 }
 
 .whatif-col {
     display: flex;
     flex-direction: column;
-
-    /* KEY: all columns start from same vertical origin */
     align-items: stretch;
+    min-width: 0;
+    gap: 10px;
+}
+
+.whatif-center-col {
+    min-width: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 8px;
+}
+
+@media (max-width: 1200px) {
+    .whatif-grid {
+        grid-template-columns: repeat(7, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .whatif-grid {
+        grid-template-columns: repeat(7, minmax(90px, 1fr));
+    }
+
+    .whatif-center-col {
+        padding: 0 6px;
+    }
+}
+
+@media (max-width: 700px) {
+    .whatif-grid {
+        gap: 8px;
+    }
+
+    .matchup-row {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .score-display {
+        font-size: 22px;
+    }
 }
 
 .whatif-col h3,
 .whatif-col h4 {
     text-align: center;
-}
-
-.whatif-center-col {
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0 10px;
 }

@@ -9,6 +9,7 @@ let teamWinsGrouped = {};        // from teamWins.json
 let playoffSeeds = {};           // from playoffSeeds.json (frozen seeding)
 let playoffBaseline = {};        // fetched but not used for auto-advances
 let whatIfState = null;
+const SHOW_WHATIF_TAB = true;
 
 
 /*********************************
@@ -134,6 +135,17 @@ function showPage(pageId) {
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
     const nav = safeEl('nav-' + pageId);
     if (nav) nav.classList.add('active');
+}
+
+function updateWhatIfTabVisibility() {
+    const nav = safeEl('nav-whatif');
+    if (!nav) return;
+
+    nav.style.display = SHOW_WHATIF_TAB ? 'inline-flex' : 'none';
+
+    if (!SHOW_WHATIF_TAB && nav.classList.contains('active')) {
+        showPage('home');
+    }
 }
 
 
@@ -322,7 +334,7 @@ function renderWhatIfMissingSeeds() {
     const sbEl = safeEl("whatif-superbowl");
     const scoreEl = safeEl("whatif-score");
 
-    if (scoreEl) scoreEl.innerHTML = `<div class="card">Fill in <code>playoffSeeds.json</code> to enable What-if.</div>`;
+    if (scoreEl) scoreEl.innerHTML = `<div class="card">Fill in <code>playoff/playoffSeeds.json</code> to enable What-if.</div>`;
     if (afcEl) afcEl.innerHTML = `<div class="card">Missing AFC seeds.</div>`;
     if (nfcEl) nfcEl.innerHTML = `<div class="card">Missing NFC seeds.</div>`;
     if (sbEl) sbEl.innerHTML = `<div class="card">Missing seeds.</div>`;
@@ -844,9 +856,9 @@ async function init() {
         ] = await Promise.all([
             fetch('draft.json'),
             fetch('schedule.json'),
-            fetch('playoffBonus.json'),
+            fetch('playoff/playoffBonus.json'),
             fetch('teamWins.json'),
-            fetch('playoffSeeds.json')
+            fetch('playoff/playoffSeeds.json')
         ]);
 
         draftData = await draftRes.json();
@@ -919,5 +931,6 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    updateWhatIfTabVisibility();
     init();
 });
