@@ -199,7 +199,7 @@ main#content.fade-in {
     background: rgba(255, 255, 255, 0.08);
 }
 
-.matchup-row > div {
+.matchup-row>div {
     min-width: 0;
     max-width: 100%;
     overflow-wrap: anywhere;
