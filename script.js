@@ -9,7 +9,7 @@ let teamWinsGrouped = {};        // from teamWins.json
 let playoffSeeds = {};           // from playoffSeeds.json (frozen seeding)
 let playoffBaseline = {};        // fetched but not used for auto-advances
 let whatIfState = null;
-const SHOW_WHATIF_TAB = true;
+const SHOW_WHATIF_TAB = false;
 
 
 /*********************************

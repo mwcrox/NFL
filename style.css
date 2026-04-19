@@ -120,6 +120,16 @@ main#content.fade-in {
     padding-left: 0;
 }
 
+.history-year {
+    color: white;
+    text-decoration: none;
+}
+
+.history-year:hover,
+.history-year:focus {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .score-display {
         font-size: 20px;
