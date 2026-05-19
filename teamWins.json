@@ -3,73 +3,73 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 12
+                "wins": 0
             },
             {
                 "name": "Miami Dolphins",
-                "wins": 7
+                "wins": 0
             },
             {
                 "name": "New England Patriots",
-                "wins": 14
+                "wins": 0
             },
             {
                 "name": "New York Jets",
-                "wins": 3
+                "wins": 0
             }
         ],
         "North": [
             {
                 "name": "Baltimore Ravens",
-                "wins": 8
+                "wins": 0
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 6
+                "wins": 0
             },
             {
                 "name": "Cleveland Browns",
-                "wins": 5
+                "wins": 0
             },
             {
                 "name": "Pittsburgh Steelers",
-                "wins": 10
+                "wins": 0
             }
         ],
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 12
+                "wins": 0
             },
             {
                 "name": "Indianapolis Colts",
-                "wins": 8
+                "wins": 0
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 13
+                "wins": 0
             },
             {
                 "name": "Tennessee Titans",
-                "wins": 3
+                "wins": 0
             }
         ],
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 14
+                "wins": 0
             },
             {
                 "name": "Kansas City Chiefs",
-                "wins": 6
+                "wins": 0
             },
             {
                 "name": "Las Vegas Raiders",
-                "wins": 3
+                "wins": 0
             },
             {
                 "name": "Los Angeles Chargers",
-                "wins": 11
+                "wins": 0
             }
         ]
     },
@@ -77,73 +77,73 @@
         "East": [
             {
                 "name": "Dallas Cowboys",
-                "wins": 7
+                "wins": 0
             },
             {
                 "name": "New York Giants",
-                "wins": 4
+                "wins": 0
             },
             {
                 "name": "Philadelphia Eagles",
-                "wins": 11
+                "wins": 0
             },
             {
                 "name": "Washington Commanders",
-                "wins": 5
+                "wins": 0
             }
         ],
         "North": [
             {
                 "name": "Chicago Bears",
-                "wins": 11
+                "wins": 0
             },
             {
                 "name": "Detroit Lions",
-                "wins": 9
+                "wins": 0
             },
             {
                 "name": "Green Bay Packers",
-                "wins": 9
+                "wins": 0
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 9
+                "wins": 0
             }
         ],
         "South": [
             {
                 "name": "Atlanta Falcons",
-                "wins": 8
+                "wins": 0
             },
             {
                 "name": "Carolina Panthers",
-                "wins": 8
+                "wins": 0
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 6
+                "wins": 0
             },
             {
                 "name": "Tampa Bay Buccaneers",
-                "wins": 8
+                "wins": 0
             }
         ],
         "West": [
             {
                 "name": "Arizona Cardinals",
-                "wins": 3
+                "wins": 0
             },
             {
                 "name": "Los Angeles Rams",
-                "wins": 12
+                "wins": 0
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 12
+                "wins": 0
             },
             {
                 "name": "Seattle Seahawks",
-                "wins": 14
+                "wins": 0
             }
         ]
     }
