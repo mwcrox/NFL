@@ -33,22 +33,38 @@ function getCurrentWeekKey() {
     const now = new Date();
     const estNow = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
 
-    const regularSeasonStart = new Date("2025-09-03T12:00:00-04:00");
-    const week1Cutoff = new Date("2025-09-09T12:00:00-04:00");
+    // 2026 NFL season dates. Weeks roll over on Tuesday at noon ET
+    // so Monday night games still count as the prior week.
+    const regularSeasonWeekCutoffs = [
+        { key: "Week 1", end: new Date("2026-09-15T12:00:00-04:00") },
+        { key: "Week 2", end: new Date("2026-09-22T12:00:00-04:00") },
+        { key: "Week 3", end: new Date("2026-09-29T12:00:00-04:00") },
+        { key: "Week 4", end: new Date("2026-10-06T12:00:00-04:00") },
+        { key: "Week 5", end: new Date("2026-10-13T12:00:00-04:00") },
+        { key: "Week 6", end: new Date("2026-10-20T12:00:00-04:00") },
+        { key: "Week 7", end: new Date("2026-10-27T12:00:00-04:00") },
+        { key: "Week 8", end: new Date("2026-11-03T12:00:00-05:00") },
+        { key: "Week 9", end: new Date("2026-11-10T12:00:00-05:00") },
+        { key: "Week 10", end: new Date("2026-11-17T12:00:00-05:00") },
+        { key: "Week 11", end: new Date("2026-11-24T12:00:00-05:00") },
+        { key: "Week 12", end: new Date("2026-12-01T12:00:00-05:00") },
+        { key: "Week 13", end: new Date("2026-12-08T12:00:00-05:00") },
+        { key: "Week 14", end: new Date("2026-12-15T12:00:00-05:00") },
+        { key: "Week 15", end: new Date("2026-12-22T12:00:00-05:00") },
+        { key: "Week 16", end: new Date("2026-12-29T12:00:00-05:00") },
+        { key: "Week 17", end: new Date("2027-01-05T12:00:00-05:00") },
+        { key: "Week 18", end: new Date("2027-01-12T12:00:00-05:00") }
+    ];
 
-    if (estNow < week1Cutoff) return "Week 1";
-
-    for (let i = 2; i <= 18; i++) {
-        const weekStart = new Date(regularSeasonStart);
-        weekStart.setDate(weekStart.getDate() + (i - 1) * 7);
-        if (estNow < weekStart) return `Week ${i - 1}`;
+    for (const week of regularSeasonWeekCutoffs) {
+        if (estNow < week.end) return week.key;
     }
 
     const playoffs = [
-        { key: "Wild Card Round", start: new Date("2026-01-05T00:00:00-05:00") },
-        { key: "Divisional Round", start: new Date("2026-01-13T00:00:00-05:00") },
-        { key: "Conference Championship", start: new Date("2026-01-20T00:00:00-05:00") },
-        { key: "Super Bowl", start: new Date("2026-01-26T00:00:00-05:00") }
+        { key: "Wild Card Round", start: new Date("2027-01-16T00:00:00-05:00") },
+        { key: "Divisional Round", start: new Date("2027-01-23T00:00:00-05:00") },
+        { key: "Conference Championship", start: new Date("2027-01-31T00:00:00-05:00") },
+        { key: "Super Bowl", start: new Date("2027-02-14T00:00:00-05:00") }
     ];
 
     if (estNow < playoffs[0].start) return "Week 18";
@@ -57,10 +73,7 @@ function getCurrentWeekKey() {
         const thisRound = playoffs[i];
         const nextRound = playoffs[i + 1];
 
-        const afterThisRoundStarts = estNow >= thisRound.start;
-        const beforeNextRoundStarts = !nextRound || estNow < nextRound.start;
-
-        if (afterThisRoundStarts && beforeNextRoundStarts) {
+        if (estNow >= thisRound.start && (!nextRound || estNow < nextRound.start)) {
             return thisRound.key;
         }
     }

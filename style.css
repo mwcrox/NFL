@@ -2,15 +2,44 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('pictures/Background3.0.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: white;
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #111;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('pictures/Background3.0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(22px);
+    transform: scale(1.08);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('pictures/Background3.0.png');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+header,
+main#content {
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -169,7 +198,6 @@ main#content.fade-in {
         flex: 1;
         min-width: 320px;
         order: 3;
-        /* center drops below on small screens */
     }
 }
 
