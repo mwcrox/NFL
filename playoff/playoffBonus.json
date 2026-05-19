@@ -1,39 +1,39 @@
 {
     "wildcard": [
-        "Denver Broncos",
-        "New England Patriots",
-        "Jacksonville Jaguars",
-        "Pittsburgh Steelers",
-        "Houston Texans",
-        "Buffalo Bills",
-        "Los Angeles Chargers",
-        "Seattle Seahawks",
-        "Chicago Bears",
-        "Philadelphia Eagles",
-        "Carolina Panthers",
-        "Los Angeles Rams",
-        "San Francisco 49ers",
-        "Green Bay Packers"
+        "AFC 1",
+        "AFC 2",
+        "AFC 3",
+        "AFC 4",
+        "AFC 5",
+        "AFC 6",
+        "AFC 7",
+        "NFC 1",
+        "NFC 2",
+        "NFC 3",
+        "NFC 4",
+        "NFC 5",
+        "NFC 6",
+        "NFC 7"
     ],
     "divisional": [
-        "Denver Broncos",
-        "New England Patriots",
-        "Buffalo Bills",
-        "Houston Texans",
-        "Seattle Seahawks",
-        "Chicago Bears",
-        "Los Angeles Rams",
-        "San Francisco 49ers"
+        "AFC 1",
+        "AFC 2",
+        "AFC 3",
+        "AFC 4",
+        "NFC 1",
+        "NFC 2",
+        "NFC 3",
+        "NFC 4"
     ],
     "championship": [
-        "Denver Broncos",
-        "New England Patriots",
-        "Seattle Seahawks",
-        "Los Angeles Rams"
+        "AFC 1",
+        "AFC 2",
+        "NFC 1",
+        "NFC 2"
     ],
     "superbowl": [
-        "New England Patriots",
-        "Seattle Seahawks"
+        "AFC 1",
+        "NFC 1"
     ],
-    "winner": "Seattle Seahawks"
+    "winner": "NFL 1"
 }
