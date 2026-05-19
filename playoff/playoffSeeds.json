@@ -3,61 +3,61 @@
     "AFC": [
         {
             "seed": 1,
-            "team": "Denver Broncos"
+            "team": "AFC 1"
         },
         {
             "seed": 2,
-            "team": "New England Patriots"
+            "team": "AFC 2"
         },
         {
             "seed": 3,
-            "team": "Jacksonville Jaguars"
+            "team": "AFC 3"
         },
         {
             "seed": 4,
-            "team": "Pittsburgh Steelers"
+            "team": "AFC 4"
         },
         {
             "seed": 5,
-            "team": "Houston Texans"
+            "team": "AFC 5"
         },
         {
             "seed": 6,
-            "team": "Buffalo Bills"
+            "team": "AFC 6"
         },
         {
             "seed": 7,
-            "team": "Los Angeles Chargers"
+            "team": "AFC 7"
         }
     ],
     "NFC": [
         {
             "seed": 1,
-            "team": "Seattle Seahawks"
+            "team": "NFC 1"
         },
         {
             "seed": 2,
-            "team": "Chicago Bears"
+            "team": "NFC 2"
         },
         {
             "seed": 3,
-            "team": "Philadelphia Eagles"
+            "team": "NFC 3"
         },
         {
             "seed": 4,
-            "team": "Carolina Panthers"
+            "team": "NFC 4"
         },
         {
             "seed": 5,
-            "team": "Los Angeles Rams"
+            "team": "NFC 5"
         },
         {
             "seed": 6,
-            "team": "San Francisco 49ers"
+            "team": "NFC 6"
         },
         {
             "seed": 7,
-            "team": "Green Bay Packers"
+            "team": "NFC 7"
         }
     ]
 }
