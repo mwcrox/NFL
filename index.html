@@ -1,136 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NFL Fantasy Draft</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Michael and Zach's season-long NFL fantasy draft tracker, weekly matchups, standings, and draft history.">
+    <meta name="theme-color" content="#071321">
+    <title>Michael vs. Zach | NFL Fantasy Draft</title>
+    <link rel="preload" href="pictures/Background3.0.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
+    <a class="skip-link" href="#content">Skip to main content</a>
+
+    <header class="site-header">
         <div class="header-inner">
-            <nav>
-                <a href="#" id="nav-home" class="nav-link active">Home</a>
-                <a href="#" id="nav-teams" class="nav-link">Teams</a>
-                <a href="#" id="nav-history" class="nav-link">History</a>
-                <a href="#" id="nav-whatif" class="nav-link">What if?</a>
+            <a class="brand" href="#home" aria-label="NFL Fantasy Draft home">
+                <span class="brand-mark" aria-hidden="true">🏈</span>
+                <span class="brand-copy">
+                    <strong>Fantasy Draft</strong>
+                    <span>Michael vs. Zach</span>
+                </span>
+            </a>
+
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="#home" id="nav-home" class="nav-link" data-page="home" aria-current="page">Home</a>
+                <a href="#teams" id="nav-teams" class="nav-link" data-page="teams">Teams</a>
+                <a href="#history" id="nav-history" class="nav-link" data-page="history">History</a>
+                <a href="#whatif" id="nav-whatif" class="nav-link" data-page="whatif" hidden>What if?</a>
             </nav>
         </div>
     </header>
 
-    <main id="content">
-        <!-- Home Page -->
-        <section id="home" class="page active">
-            <h1>NFL Fantasy Draft</h1>
-            <div id="total-wins" class="score-display"></div>
+    <main id="content" class="site-main" tabindex="-1">
+        <div id="app-status" class="status-panel status-panel--loading" role="status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            <span id="app-status-message">Loading the 2026 season…</span>
+        </div>
 
-            <div id="current-week"></div>
-            <h2>Key Matchups</h2>
-            <div id="matchups"></div>
-        </section>
-
-        <!-- Teams Page -->
-        <section id="teams" class="page">
-            <div class="teams-container">
-                <div class="team-column">
-                    <h2>Michael's Team
-                        <img src="pictures/Michael.png" alt="Michael Logo"
-                            style="height: 64px; vertical-align: middle; margin-left: 8px;">
-                    </h2>
-                    <div id="michael-teams"></div>
-                </div>
-
-                <div class="team-column">
-                    <h2>Zach's Team
-                        <img src="pictures/Zach.PNG" alt="Zach Logo"
-                            style="height: 64px; vertical-align: middle; margin-left: 8px;">
-                    </h2>
-                    <div id="zach-teams"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- History Page -->
-        <section id="history" class="page">
-            <h2>Draft History</h2>
-            <ul id="history-list">
-                <li><a href="#" class="history-year" data-year="2025">2025 Results</a></li>
-                <li><a href="#" class="history-year" data-year="2024">2024 Results</a></li>
-                <li><a href="#" class="history-year" data-year="2023">2023 Results</a></li>
-                <li><a href="#" class="history-year" data-year="2022">2022 Results</a></li>
-            </ul>
-
-            <div id="history-results"></div>
-        </section>
-
-        <!-- What If Page -->
-        <section id="whatif" class="page">
-            <h2>What if?</h2>
-
-            <div id="whatif-score" class="score-display"></div>
-
-            <!-- ✅ NEW: odds display -->
-            <div id="whatif-odds" class="score-display"></div>
-
-            <div class="whatif-grid">
-                <!-- AFC side (left -> center) -->
-                <div class="whatif-col">
-                    <h3>AFC</h3>
-                    <h4>Wild Card</h4>
-                    <div id="whatif-afc-wc"></div>
-                </div>
-
-                <div class="whatif-col">
-                    <h3>&nbsp;</h3>
-                    <h4>Divisional</h4>
-                    <div id="whatif-afc-div"></div>
-                </div>
-
-                <div class="whatif-col">
-                    <h3>&nbsp;</h3>
-                    <h4>Conf. Champ</h4>
-                    <div id="whatif-afc-conf"></div>
-                </div>
-
-                <!-- Super Bowl center -->
-                <div class="whatif-col whatif-center-col">
-                    <h3>Super Bowl</h3>
-                    <div id="whatif-superbowl"></div>
-                    <div style="margin-top: 12px;">
-                        <button id="whatif-reset" class="btn">Reset What-if</button>
+        <section id="home" class="page" aria-labelledby="home-title">
+            <section class="score-section" aria-labelledby="home-title">
+                <header class="score-header">
+                    <div>
+                        <p class="eyebrow">Live standings</p>
+                        <h1 id="home-title" tabindex="-1">2026 Season Score</h1>
                     </div>
+                    <p class="season-meta">
+                        <span>2026 season</span>
+                        <span class="season-meta-divider" aria-hidden="true">•</span>
+                        <span>Now tracking <strong id="current-week">—</strong></span>
+                    </p>
+                </header>
+
+                <div id="total-wins" class="scoreboard" aria-live="polite" aria-busy="true">
+                    <div class="scoreboard-skeleton" aria-hidden="true"></div>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="matchups-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Head-to-head</p>
+                        <h2 id="matchups-title">Key matchups</h2>
+                    </div>
+                    <p>Games where Michael’s and Zach’s drafted teams face each other.</p>
                 </div>
 
-                <!-- NFC side (center -> right) -->
-                <div class="whatif-col">
-                    <h3>&nbsp;</h3>
-                    <h4>Conf. Champ</h4>
-                    <div id="whatif-nfc-conf"></div>
+                <div id="matchups" class="matchup-list" aria-live="polite" aria-busy="true">
+                    <div class="card-skeleton" aria-hidden="true"></div>
+                    <div class="card-skeleton" aria-hidden="true"></div>
                 </div>
+            </section>
 
-                <div class="whatif-col">
-                    <h3>&nbsp;</h3>
-                    <h4>Divisional</h4>
-                    <div id="whatif-nfc-div"></div>
-                </div>
+            <details class="rules-panel">
+                <summary>How scoring works</summary>
 
-                <div class="whatif-col">
-                    <h3>NFC</h3>
-                    <h4>Wild Card</h4>
-                    <div id="whatif-nfc-wc"></div>
+                <div class="rules-content">
+                    <ul>
+                        <li><strong>+2</strong> for each regular-season win</li>
+                        <li><strong>+7</strong> for reaching the playoffs, divisional round, and conference championship
+                        </li>
+                        <li><strong>+10</strong> for winning a conference championship</li>
+                        <li><strong>+7</strong> for winning the Super Bowl</li>
+                    </ul>
                 </div>
+            </details>
+        </section>
+
+        <section id="teams" class="page" aria-labelledby="teams-title" hidden>
+            <header class="page-header">
+                <h1 id="teams-title" tabindex="-1">2026 Draft Board</h1>
+                <p>Teams are shown in draft order with their current regular-season win totals.</p>
+            </header>
+
+            <div class="roster-grid">
+                <article class="roster-panel roster-panel--michael" aria-labelledby="michael-roster-title">
+                    <header class="roster-header">
+                        <img src="pictures/Michael.webp" width="256" height="256" alt="" loading="lazy"
+                            decoding="async">
+
+                        <div>
+                            <p class="owner-kicker">Orange roster</p>
+                            <h2 id="michael-roster-title">Michael’s team</h2>
+                            <p id="michael-summary" class="roster-summary">16 drafted teams</p>
+                        </div>
+                    </header>
+
+                    <ol id="michael-teams" class="team-list" aria-busy="true"></ol>
+                </article>
+
+                <article class="roster-panel roster-panel--zach" aria-labelledby="zach-roster-title">
+                    <header class="roster-header">
+                        <img src="pictures/Zach.webp" width="256" height="256" alt="" loading="lazy" decoding="async">
+
+                        <div>
+                            <p class="owner-kicker">Purple roster</p>
+                            <h2 id="zach-roster-title">Zach’s team</h2>
+                            <p id="zach-summary" class="roster-summary">16 drafted teams</p>
+                        </div>
+                    </header>
+
+                    <ol id="zach-teams" class="team-list" aria-busy="true"></ol>
+                </article>
+            </div>
+        </section>
+
+        <section id="history" class="page" aria-labelledby="history-title" hidden>
+            <header class="page-header">
+                <p class="eyebrow">The rivalry archive</p>
+                <h1 id="history-title" tabindex="-1">Draft history</h1>
+                <p>Choose a season to revisit the final score, first pick, and every team’s point contribution.</p>
+            </header>
+
+            <div class="year-picker" role="group" aria-label="Choose a draft season">
+                <button type="button" class="year-button" data-year="2025" aria-pressed="false">2025</button>
+                <button type="button" class="year-button" data-year="2024" aria-pressed="false">2024</button>
+                <button type="button" class="year-button" data-year="2023" aria-pressed="false">2023</button>
+                <button type="button" class="year-button" data-year="2022" aria-pressed="false">2022</button>
             </div>
 
-            <p class="small-note">
-                +7 playoffs, +7 divisional, +7 conference championship appearance, +10 conference champ win, +7 Super
-                Bowl win.
-            </p>
+            <div id="history-status" class="inline-status" role="status" aria-live="polite"></div>
+            <div id="history-results" class="history-results" aria-live="polite"></div>
+        </section>
+
+        <section id="whatif" class="page page--wide" aria-labelledby="whatif-title" hidden>
+            <header class="page-header">
+                <p class="eyebrow">Playoff simulator</p>
+                <h1 id="whatif-title" tabindex="-1">What if?</h1>
+                <p>Pick each game winner to see how the playoff bracket changes the season score. Later rounds unlock as
+                    picks are completed.</p>
+            </header>
+
+            <div id="whatif-score" class="scoreboard scoreboard--compact" aria-live="polite"></div>
+            <div id="whatif-odds" class="odds-panel" aria-live="polite"></div>
+
+            <div class="bracket-toolbar">
+                <p id="bracket-instructions">Select a team in each matchup to advance it.</p>
+                <button id="whatif-reset" class="button button--secondary" type="button">Reset bracket</button>
+            </div>
+
+            <div class="playoff-bracket" aria-describedby="bracket-instructions">
+                <section class="conference-bracket conference-bracket--afc" aria-labelledby="afc-title">
+                    <h2 id="afc-title">AFC</h2>
+
+                    <div class="conference-rounds">
+                        <section class="bracket-round bracket-round--wc" aria-labelledby="afc-wc-title">
+                            <h3 id="afc-wc-title">Wild card</h3>
+                            <div id="whatif-afc-wc"></div>
+                        </section>
+
+                        <section class="bracket-round bracket-round--div" aria-labelledby="afc-div-title">
+                            <h3 id="afc-div-title">Divisional</h3>
+                            <div id="whatif-afc-div"></div>
+                        </section>
+
+                        <section class="bracket-round bracket-round--conf" aria-labelledby="afc-conf-title">
+                            <h3 id="afc-conf-title">Conference</h3>
+                            <div id="whatif-afc-conf"></div>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="championship-stage" aria-labelledby="superbowl-title">
+                    <p class="eyebrow">Final</p>
+                    <h2 id="superbowl-title">Super Bowl</h2>
+                    <div id="whatif-superbowl"></div>
+                </section>
+
+                <section class="conference-bracket conference-bracket--nfc" aria-labelledby="nfc-title">
+                    <h2 id="nfc-title">NFC</h2>
+
+                    <div class="conference-rounds">
+                        <section class="bracket-round bracket-round--wc" aria-labelledby="nfc-wc-title">
+                            <h3 id="nfc-wc-title">Wild card</h3>
+                            <div id="whatif-nfc-wc"></div>
+                        </section>
+
+                        <section class="bracket-round bracket-round--div" aria-labelledby="nfc-div-title">
+                            <h3 id="nfc-div-title">Divisional</h3>
+                            <div id="whatif-nfc-div"></div>
+                        </section>
+
+                        <section class="bracket-round bracket-round--conf" aria-labelledby="nfc-conf-title">
+                            <h3 id="nfc-conf-title">Conference</h3>
+                            <div id="whatif-nfc-conf"></div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <p class="small-note">All unselected games are treated as equally likely when calculating the displayed
+                odds.</p>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="site-footer">
+        <p>Built for the annual Michael vs. Zach NFL draft.</p>
+    </footer>
+
+    <noscript>
+        <div class="noscript-message">This tracker needs JavaScript to load the season data and standings.</div>
+    </noscript>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
