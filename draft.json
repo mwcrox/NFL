@@ -1,102 +1,102 @@
 {
     "michael": [
         {
-            "name": "Kansas City Chiefs"
-        },
-        {
-            "name": "Green Bay Packers"
-        },
-        {
             "name": "Los Angeles Rams"
-        },
-        {
-            "name": "Houston Texans"
-        },
-        {
-            "name": "Washington Commanders"
-        },
-        {
-            "name": "Cincinnati Bengals"
-        },
-        {
-            "name": "Pittsburgh Steelers"
         },
         {
             "name": "Denver Broncos"
         },
         {
-            "name": "Seattle Seahawks"
-        },
-        {
-            "name": "Jacksonville Jaguars"
-        },
-        {
-            "name": "Miami Dolphins"
-        },
-        {
-            "name": "New York Jets"
-        },
-        {
-            "name": "Carolina Panthers"
-        },
-        {
-            "name": "Tennessee Titans"
-        },
-        {
-            "name": "New Orleans Saints"
-        },
-        {
-            "name": "Indianapolis Colts"
-        }
-    ],
-    "zach": [
-        {
             "name": "Buffalo Bills"
-        },
-        {
-            "name": "Philadelphia Eagles"
-        },
-        {
-            "name": "Baltimore Ravens"
-        },
-        {
-            "name": "San Francisco 49ers"
         },
         {
             "name": "Detroit Lions"
         },
         {
-            "name": "Tampa Bay Buccaneers"
+            "name": "New England Patriots"
         },
         {
-            "name": "Los Angeles Chargers"
+            "name": "Kansas City Chiefs"
+        },
+        {
+            "name": "Cincinnati Bengals"
+        },
+        {
+            "name": "Green Bay Packers"
+        },
+        {
+            "name": "Tampa Bay Buccaneers"
         },
         {
             "name": "Dallas Cowboys"
         },
         {
-            "name": "Minnesota Vikings"
-        },
-        {
-            "name": "Arizona Cardinals"
-        },
-        {
-            "name": "Chicago Bears"
-        },
-        {
-            "name": "Atlanta Falcons"
-        },
-        {
-            "name": "New England Patriots"
-        },
-        {
-            "name": "Las Vegas Raiders"
+            "name": "Pittsburgh Steelers"
         },
         {
             "name": "New York Giants"
         },
         {
+            "name": "Atlanta Falcons"
+        },
+        {
+            "name": "Tennessee Titans"
+        },
+        {
+            "name": "Arizona Cardinals"
+        },
+        {
+            "name": "New York Jets"
+        }
+    ],
+    "zach": [
+        {
+            "name": "Seattle Seahawks"
+        },
+        {
+            "name": "Baltimore Ravens"
+        },
+        {
+            "name": "Houston Texans"
+        },
+        {
+            "name": "Philadelphia Eagles"
+        },
+        {
+            "name": "San Francisco 49ers"
+        },
+        {
+            "name": "Los Angeles Chargers"
+        },
+        {
+            "name": "Jacksonville Jaguars"
+        },
+        {
+            "name": "Chicago Bears"
+        },
+        {
+            "name": "New Orleans Saints"
+        },
+        {
+            "name": "Carolina Panthers"
+        },
+        {
+            "name": "Indianapolis Colts"
+        },
+        {
+            "name": "Minnesota Vikings"
+        },
+        {
+            "name": "Washington Commanders"
+        },
+        {
+            "name": "Las Vegas Raiders"
+        },
+        {
             "name": "Cleveland Browns"
+        },
+        {
+            "name": "Miami Dolphins"
         }
     ]
 }
