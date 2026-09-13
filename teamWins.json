@@ -3,7 +3,7 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Miami Dolphins",
@@ -15,17 +15,17 @@
             },
             {
                 "name": "New York Jets",
-                "wins": 0
+                "wins": 1
             }
         ],
         "North": [
             {
                 "name": "Baltimore Ravens",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Cleveland Browns",
@@ -33,7 +33,7 @@
             },
             {
                 "name": "Pittsburgh Steelers",
-                "wins": 0
+                "wins": 1
             }
         ],
         "South": [
@@ -47,7 +47,7 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Tennessee Titans",
@@ -99,7 +99,7 @@
             },
             {
                 "name": "Detroit Lions",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Green Bay Packers",
