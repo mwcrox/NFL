@@ -81,11 +81,11 @@
             },
             {
                 "name": "New York Giants",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Philadelphia Eagles",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Washington Commanders",
@@ -107,7 +107,7 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 0
+                "wins": 1
             }
         ],
         "South": [
@@ -131,7 +131,7 @@
         "West": [
             {
                 "name": "Arizona Cardinals",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Los Angeles Rams",
