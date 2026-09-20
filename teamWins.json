@@ -11,7 +11,7 @@
             },
             {
                 "name": "New England Patriots",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "New York Jets",
@@ -25,7 +25,7 @@
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Cleveland Browns",
@@ -85,7 +85,7 @@
             },
             {
                 "name": "Philadelphia Eagles",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Washington Commanders",
@@ -103,11 +103,11 @@
             },
             {
                 "name": "Green Bay Packers",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 1
+                "wins": 2
             }
         ],
         "South": [
@@ -117,11 +117,11 @@
             },
             {
                 "name": "Carolina Panthers",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "New Orleans Saints",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Tampa Bay Buccaneers",
