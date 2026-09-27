@@ -21,7 +21,7 @@
         "North": [
             {
                 "name": "Baltimore Ravens",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Cincinnati Bengals",
@@ -65,7 +65,7 @@
             },
             {
                 "name": "Las Vegas Raiders",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Los Angeles Chargers",
@@ -107,7 +107,7 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 2
+                "wins": 3
             }
         ],
         "South": [
@@ -139,7 +139,7 @@
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Seattle Seahawks",
