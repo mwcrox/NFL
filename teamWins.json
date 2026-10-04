@@ -61,7 +61,7 @@
             },
             {
                 "name": "Kansas City Chiefs",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Las Vegas Raiders",
@@ -107,7 +107,7 @@
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 3
+                "wins": 4
             }
         ],
         "South": [
@@ -139,11 +139,11 @@
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Seattle Seahawks",
-                "wins": 2
+                "wins": 3
             }
         ]
     }
