@@ -57,7 +57,7 @@
         "West": [
             {
                 "name": "Denver Broncos",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Kansas City Chiefs",
@@ -99,7 +99,7 @@
             },
             {
                 "name": "Detroit Lions",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Green Bay Packers",
@@ -139,7 +139,7 @@
             },
             {
                 "name": "San Francisco 49ers",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "Seattle Seahawks",
