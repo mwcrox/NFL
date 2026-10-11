@@ -11,11 +11,11 @@
             },
             {
                 "name": "New England Patriots",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "New York Jets",
-                "wins": 1
+                "wins": 2
             }
         ],
         "North": [
@@ -25,7 +25,7 @@
             },
             {
                 "name": "Cincinnati Bengals",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Cleveland Browns",
@@ -33,13 +33,13 @@
             },
             {
                 "name": "Pittsburgh Steelers",
-                "wins": 2
+                "wins": 3
             }
         ],
         "South": [
             {
                 "name": "Houston Texans",
-                "wins": 0
+                "wins": 1
             },
             {
                 "name": "Indianapolis Colts",
@@ -47,7 +47,7 @@
             },
             {
                 "name": "Jacksonville Jaguars",
-                "wins": 3
+                "wins": 4
             },
             {
                 "name": "Tennessee Titans",
@@ -103,11 +103,11 @@
             },
             {
                 "name": "Green Bay Packers",
-                "wins": 2
+                "wins": 3
             },
             {
                 "name": "Minnesota Vikings",
-                "wins": 4
+                "wins": 5
             }
         ],
         "South": [
