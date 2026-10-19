@@ -3,7 +3,7 @@
         "East": [
             {
                 "name": "Buffalo Bills",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "Miami Dolphins",
@@ -61,7 +61,7 @@
             },
             {
                 "name": "Kansas City Chiefs",
-                "wins": 4
+                "wins": 5
             },
             {
                 "name": "Las Vegas Raiders",
@@ -131,7 +131,7 @@
         "West": [
             {
                 "name": "Arizona Cardinals",
-                "wins": 1
+                "wins": 2
             },
             {
                 "name": "Los Angeles Rams",
