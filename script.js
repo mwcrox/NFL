@@ -4,28 +4,33 @@
  * CONFIGURATION + STATE
  *********************************/
 
-const SHOW_WHATIF_TAB = false;
+const SHOW_WHATIF_TAB = true;
 const DEFAULT_HISTORY_YEAR = "2025";
+const SEASON = 2026;
+const AUTO_REFRESH_MS = 5 * 60 * 1000;
 
 const DATA_PATHS = {
     draft: "draft.json",
-    schedule: "schedule.json",
-    playoffBonus: "playoff/playoffBonus.json",
-    playoffSeeds: "playoff/playoffSeeds.json",
-    teamWins: "teamWins.json"
+    snapshot: "data/season.json"
 };
 
 const PAGE_TITLES = {
     home: "Michael vs. Zach | NFL Fantasy Draft",
     teams: "2026 Teams | NFL Fantasy Draft",
     history: "Draft History | NFL Fantasy Draft",
-    whatif: "Playoff What If? | NFL Fantasy Draft"
+    whatif: "Playoff What If? | NFL Fantasy Draft",
+    rules: "Scoring | NFL Fantasy Draft"
 };
 
 let draftData = {};
 let scheduleData = {};
 let playoffBonusData = {};
-let teamWinsGrouped = {};
+let teamRecords = [];
+let seasonSnapshot = null;
+let refreshInFlight = false;
+let lastRefreshAttempt = 0;
+let refreshFailed = false;
+let displayedWeek = null;
 let playoffSeeds = {};
 let whatIfState = null;
 let appReady = false;
@@ -85,11 +90,11 @@ function validateCoreData() {
     }
 
     if (!scheduleData || typeof scheduleData !== "object" || Array.isArray(scheduleData)) {
-        throw new Error("schedule.json must contain weekly matchup data.");
+        throw new Error("The automatic snapshot must contain weekly matchup data.");
     }
 
-    if (!teamWinsGrouped || typeof teamWinsGrouped !== "object") {
-        throw new Error("teamWins.json must contain the AFC and NFC standings.");
+    if (teamRecords.length !== 32) {
+        throw new Error("The season snapshot must contain all 32 NFL teams.");
     }
 }
 
@@ -118,6 +123,21 @@ function renderFatalError(error) {
         <p>${escapeHTML(error.message || "An unexpected error occurred.")} Make sure the site is opened from a web server and that the JSON folders have not been renamed.</p>
         <button type="button" class="button button--primary" data-retry-app>Try again</button>
     `;
+}
+
+
+function teamAbbreviation(name) {
+    const abbreviations = {
+        "Arizona Cardinals": "ARI", "Atlanta Falcons": "ATL", "Baltimore Ravens": "BAL", "Buffalo Bills": "BUF",
+        "Carolina Panthers": "CAR", "Chicago Bears": "CHI", "Cincinnati Bengals": "CIN", "Cleveland Browns": "CLE",
+        "Dallas Cowboys": "DAL", "Denver Broncos": "DEN", "Detroit Lions": "DET", "Green Bay Packers": "GB",
+        "Houston Texans": "HOU", "Indianapolis Colts": "IND", "Jacksonville Jaguars": "JAX", "Kansas City Chiefs": "KC",
+        "Las Vegas Raiders": "LV", "Los Angeles Chargers": "LAC", "Los Angeles Rams": "LAR", "Miami Dolphins": "MIA",
+        "Minnesota Vikings": "MIN", "New England Patriots": "NE", "New Orleans Saints": "NO", "New York Giants": "NYG",
+        "New York Jets": "NYJ", "Philadelphia Eagles": "PHI", "Pittsburgh Steelers": "PIT", "San Francisco 49ers": "SF",
+        "Seattle Seahawks": "SEA", "Tampa Bay Buccaneers": "TB", "Tennessee Titans": "TEN", "Washington Commanders": "WSH"
+    };
+    return abbreviations[name] || "NFL";
 }
 
 function getOwner(teamName) {
@@ -212,44 +232,37 @@ function calculateSeasonTotals() {
 
 function renderScoreboard(element, michaelTotal, zachTotal) {
     if (!element) return;
-
     const isTie = michaelTotal === zachTotal;
-    const michaelLeads = michaelTotal > zachTotal;
-    const zachLeads = zachTotal > michaelTotal;
     const difference = Math.abs(michaelTotal - zachTotal);
-
     const summary = isTie
-        ? `The season is tied at ${michaelTotal} points.`
-        : `${michaelLeads ? "Michael" : "Zach"} leads by ${pluralize(difference, "point")}.`;
-
-    element.setAttribute(
-        "aria-label",
-        `Michael ${michaelTotal} points, Zach ${zachTotal} points. ${summary}`
-    );
+        ? `All tied up at ${formatNumber(michaelTotal)} points`
+        : `${michaelTotal > zachTotal ? "Michael" : "Zach"} leads by ${pluralize(difference, "point")}`;
+    const projected = element.id === "whatif-score";
+    const combined = michaelTotal + zachTotal;
+    const michaelShare = combined ? michaelTotal / combined * 100 : 50;
+    const owners = [
+        { id: "michael", name: "Michael", total: michaelTotal, leading: michaelTotal > zachTotal },
+        { id: "zach", name: "Zach", total: zachTotal, leading: zachTotal > michaelTotal }
+    ];
+    element.setAttribute("aria-label", `${projected ? "Projected totals. " : ""}Michael ${michaelTotal} points, Zach ${zachTotal} points. ${summary}.`);
     element.setAttribute("aria-busy", "false");
-
-    element.innerHTML = `
-        <div class="competitor competitor--michael ${michaelLeads ? "is-leading" : ""}">
-            <img class="competitor-logo" src="pictures/Michael.webp" width="256" height="256" alt="" decoding="async">
-            <div class="competitor-copy">
-                <span class="competitor-name">Michael</span>
-                <strong class="competitor-score">${michaelTotal}</strong>
-                <span class="competitor-status">${michaelLeads ? "Leading" : ""}</span>
+    element.innerHTML = owners.map(owner => `
+        <article class="score-card score-card--${owner.id}">
+            <div class="owner-line">
+                <img class="owner-avatar" src="pictures/${owner.name}.webp" width="46" height="46" alt="" decoding="async">
+                <div>
+                    <h2>${owner.name}</h2>
+                    <small>${projected ? "Projected total" : `${(draftData[owner.id] || []).length} drafted teams`}</small>
+                </div>
+                ${owner.leading ? '<span class="leader-badge">LEADING</span>' : ""}
             </div>
+            <div class="score-value">${formatNumber(owner.total)}<small>PTS</small></div>
+        </article>
+    `).join("") + `
+        <div class="score-race">
+            <div class="race-bar" aria-hidden="true"><span style="width:${michaelShare}%"></span></div>
+            <p class="score-summary">${escapeHTML(summary)}</p>
         </div>
-
-        <span class="score-divider" aria-hidden="true">–</span>
-
-        <div class="competitor competitor--zach ${zachLeads ? "is-leading" : ""}">
-            <img class="competitor-logo" src="pictures/Zach.webp" width="256" height="256" alt="" decoding="async">
-            <div class="competitor-copy">
-                <span class="competitor-name">Zach</span>
-                <strong class="competitor-score">${zachTotal}</strong>
-                <span class="competitor-status">${zachLeads ? "Leading" : ""}</span>
-            </div>
-        </div>
-
-        <p class="score-summary">${escapeHTML(summary)}</p>
     `;
 }
 
@@ -265,49 +278,72 @@ function updateTotalWins() {
 
 function updateCurrentWeekDisplay() {
     const currentWeekEl = byId("current-week");
+    displayedWeek = getCurrentWeekKey();
 
     if (currentWeekEl) {
-        currentWeekEl.textContent = getCurrentWeekKey();
+        currentWeekEl.textContent = displayedWeek;
     }
+}
+
+function teamLogo(name) {
+    const team = teamRecords.find(record => record.name === name);
+    const fallback = `<span class="team-abbr"${team ? " hidden" : ""}>${escapeHTML(teamAbbreviation(name))}</span>`;
+    return `<span class="team-mark" aria-hidden="true">${fallback}${team ? `<img class="team-logo" src="pictures/teams/${encodeURIComponent(team.id)}.png" alt="" width="35" height="32" loading="lazy" decoding="async">` : ""}</span>`;
+}
+
+function teamRecord(name) {
+    const record = teamRecords.find(team => team.name === name);
+    return record ? `${record.wins}–${record.losses}–${record.ties}` : "—";
+}
+
+function renderAllTeams() {
+    const body = byId("all-teams-body");
+    if (!body) return;
+    body.innerHTML = [...teamRecords].sort((a, b) => a.name.localeCompare(b.name)).map(team => {
+        const owner = getOwner(team.name);
+        const ownerName = owner === "michael" ? "Michael" : owner === "zach" ? "Zach" : "Undrafted";
+        const points = team.wins * 2 + getBonusPoints(team.name);
+        return `<tr>
+            <th scope="row"><span class="table-team">${teamLogo(team.name)}<span>${escapeHTML(team.name)}</span></span></th>
+            <td><span class="owner-badge owner-badge--${owner || "none"}">${ownerName}</span></td>
+            <td class="record-cell">${teamRecord(team.name)}</td>
+            <td class="points-cell">${formatNumber(points)}</td>
+        </tr>`;
+    }).join("");
 }
 
 function renderTeamList(owner) {
     const list = byId(`${owner}-teams`);
     const summary = byId(`${owner}-summary`);
+    const total = byId(`${owner}-roster-total`);
     const teams = draftData[owner] || [];
-
     if (!list) return;
-
+    let rosterPoints = 0;
     list.innerHTML = teams.map((team, index) => {
         const wins = Number(team.wins) || 0;
-
+        const points = wins * 2 + getBonusPoints(team.name);
+        rosterPoints += points;
         return `
             <li class="team-card">
-                <span class="draft-number" aria-label="Draft pick ${index + 1}">
-                    ${String(index + 1).padStart(2, "0")}
+                <span class="draft-number" aria-label="Draft pick ${index + 1}">${String(index + 1).padStart(2, "0")}</span>
+                ${teamLogo(team.name)}
+                <span class="team-copy">
+                    <span class="team-name">${escapeHTML(team.name)}</span>
+                    <span class="team-meta" aria-label="Regular-season record, wins, losses, ties">${teamRecord(team.name)}</span>
                 </span>
-                <span class="team-name">${escapeHTML(team.name)}</span>
-                <span class="win-total">${pluralize(wins, "win")}</span>
+                <span class="team-points" aria-label="${points} points">${formatNumber(points)} <small>PTS</small></span>
             </li>
         `;
     }).join("");
-
     list.setAttribute("aria-busy", "false");
-
-    if (summary) {
-        const totalWins = teams.reduce(
-            (sum, team) => sum + (Number(team.wins) || 0),
-            0
-        );
-
-        summary.textContent =
-            `${pluralize(teams.length, "drafted team")} · ${pluralize(totalWins, "win")}`;
-    }
+    if (summary) summary.textContent = pluralize(teams.length, "drafted team");
+    if (total) total.textContent = formatNumber(rosterPoints);
 }
 
 function updateTeamLists() {
     renderTeamList("michael");
     renderTeamList("zach");
+    renderAllTeams();
 }
 
 function updateKeyMatchups() {
@@ -339,27 +375,29 @@ function updateKeyMatchups() {
         return;
     }
 
+
     matchupsEl.innerHTML = keyGames.map(game => {
         const awayOwner = getOwner(game.away);
         const homeOwner = getOwner(game.home);
-
+        const regular = currentWeek.startsWith("Week");
+        const points = regular ? 2 : currentWeek === "Conference Championship" ? 10 : 7;
+        const showScores = game.completed || game.state === "in";
+        const row = (name, owner, score) => `
+            <div class="game-team">
+                ${teamLogo(name)}
+                <span class="game-team-name">${escapeHTML(name)}</span>
+                ${showScores && Number.isFinite(score) ? `<strong class="game-score">${score}</strong>` : ""}
+                <span class="owner-badge owner-badge--${owner}">${owner === "michael" ? "Michael" : "Zach"}</span>
+            </div>`;
+        const gameStatus = game.completed ? "Final" : game.state === "in" ? game.detail : Number.isFinite(Date.parse(game.date))
+            ? new Intl.DateTimeFormat("en-US", { weekday: "short", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(game.date))
+            : "Scheduled";
         return `
             <article class="game-card" aria-label="${escapeHTML(game.away)} at ${escapeHTML(game.home)}">
-                <div class="game-team">
-                    <span class="game-team-name">${escapeHTML(game.away)}</span>
-                    <span class="owner-badge owner-badge--${awayOwner}">
-                        ${awayOwner === "michael" ? "Michael" : "Zach"}
-                    </span>
-                </div>
-
-                <span class="game-at" aria-hidden="true">@</span>
-
-                <div class="game-team">
-                    <span class="game-team-name">${escapeHTML(game.home)}</span>
-                    <span class="owner-badge owner-badge--${homeOwner}">
-                        ${homeOwner === "michael" ? "Michael" : "Zach"}
-                    </span>
-                </div>
+                <div class="game-top"><span>${escapeHTML(currentWeek.toUpperCase())}</span><span>${escapeHTML(gameStatus)}</span></div>
+                ${row(game.away, awayOwner, game.awayScore)}
+                ${row(game.home, homeOwner, game.homeScore)}
+                <div class="game-foot">${points} points ${regular || currentWeek === "Super Bowl" ? "for the win" : "for advancing"}</div>
             </article>
         `;
     }).join("");
@@ -380,7 +418,7 @@ function updateWhatIfTabVisibility() {
 
 function routeFromLocation() {
     const requestedPage = window.location.hash.replace("#", "");
-    const validPages = ["home", "teams", "history"];
+    const validPages = ["home", "teams", "history", "rules"];
 
     if (SHOW_WHATIF_TAB) {
         validPages.push("whatif");
@@ -418,8 +456,9 @@ function showPage(pageId, { focusHeading = false } = {}) {
         loadHistory(DEFAULT_HISTORY_YEAR);
     }
 
-    if (resolvedPage === "whatif" && appReady && !whatIfState) {
-        initWhatIf();
+    if (resolvedPage === "whatif" && appReady) {
+        if (!whatIfState) initWhatIf();
+        else renderWhatIf();
     }
 
     if (focusHeading) {
@@ -692,6 +731,47 @@ function freshWhatIfState(afcSeeds, nfcSeeds) {
     };
 }
 
+function actualPlayoffResult(round, teams) {
+    const roundNumber = { wc: 1, div: 2, conf: 3, sb: 4 }[round];
+    if (!roundNumber || teams.length !== 2 || teams.some(team => !team || team === "TBD")) return null;
+    return Object.values(scheduleData).flat().find(game =>
+        game.phase === 3 && game.round === roundNumber && game.completed &&
+        teams.includes(game.home) && teams.includes(game.away) && teams.includes(game.winner)
+    ) || null;
+}
+
+// Actual results always win over predictions. Preserve a later prediction only
+// when its earlier picks still agree, so a corrected result cannot leave a
+// hypothetical team advancing through a game it lost.
+function reconcileWhatIfState(previous = whatIfState) {
+    const next = freshWhatIfState(getSeedsForConference("AFC"), getSeedsForConference("NFC"));
+    const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+    const choose = (round, teams, pick) => actualPlayoffResult(round, teams)?.winner ||
+        (teams.includes(pick) ? pick : null);
+    let preserveSuperBowl = Boolean(previous);
+    for (const key of ["afc", "nfc"]) {
+        const current = next[key], old = previous?.[key];
+        current.wcWinners = wildcardMatchupsFromSeeds(current.seeds).map((matchup, index) =>
+            choose("wc", [matchup.a, matchup.b], old?.wcWinners[index]));
+        const wildcardUnchanged = same(current.wcWinners, old?.wcWinners);
+        const divisional = getDivisionalMatchupsForConference(current);
+        if (divisional) {
+            current.divWinners = divisional.map((matchup, index) =>
+                choose("div", [matchup.a, matchup.b], wildcardUnchanged ? old?.divWinners[index] : null));
+        }
+        const divisionalUnchanged = wildcardUnchanged && same(current.divWinners, old?.divWinners);
+        if (current.divWinners.every(Boolean)) {
+            current.confWinner = choose("conf", current.divWinners, divisionalUnchanged ? old?.confWinner : null);
+        }
+        preserveSuperBowl = preserveSuperBowl && divisionalUnchanged && current.confWinner === old?.confWinner;
+    }
+    if (next.afc.confWinner && next.nfc.confWinner) {
+        next.superBowl.winner = choose("sb", [next.afc.confWinner, next.nfc.confWinner],
+            preserveSuperBowl ? previous?.superBowl.winner : null);
+    }
+    return next;
+}
+
 function initWhatIf() {
     const afcSeeds = getSeedsForConference("AFC");
     const nfcSeeds = getSeedsForConference("NFC");
@@ -726,11 +806,17 @@ function renderWhatIfMissingSeeds() {
         }
     });
 
+    byId("whatif-preview-note").hidden = true;
+    byId("whatif-score").hidden = false;
+    byId("whatif-odds").hidden = true;
+    byId("whatif-odds-note").hidden = true;
+    byId("whatif-reset").disabled = true;
+
     const scoreEl = byId("whatif-score");
 
     if (scoreEl) {
         scoreEl.innerHTML =
-            '<div class="empty-state"><p>Fill in playoff/playoffSeeds.json to enable the simulator.</p></div>';
+            '<div class="empty-state"><h3>The playoff field is taking shape</h3><p>The what-if simulator will be ready when the playoff teams are set.</p></div>';
     }
 }
 
@@ -819,200 +905,114 @@ function matchupButton({
     team = "TBD",
     seed = "",
     selected = false,
-    disabled = false
+    disabled = false,
+    finalGame = null
 }) {
     const safeTeam = escapeHTML(team || "TBD");
-
-    const attributes = disabled
-        ? 'disabled aria-pressed="false"'
+    const attributes = disabled || finalGame
+        ? `disabled aria-pressed="${selected}" aria-label="${safeTeam}${finalGame ? ` — ${selected ? "winner" : "eliminated"}, result locked` : " — waiting for earlier picks"}"`
         : `data-conf="${escapeHTML(conference)}" data-round="${escapeHTML(round)}" data-idx="${escapeHTML(index)}" data-team="${safeTeam}" aria-pressed="${selected}" aria-label="Select ${safeTeam} to advance"`;
 
     const seedMarkup = seed
         ? `<span class="seed">#${escapeHTML(seed)}</span>`
         : "";
 
+    const score = finalGame ? (finalGame.home === team ? finalGame.homeScore : finalGame.awayScore) : null;
     return `
-        <button type="button" class="matchup-row" ${attributes}>
+        <button type="button" class="matchup-row" data-owner="${getOwner(team) || ""}" ${attributes}>
+            ${teamRecords.some(record => record.name === team) ? teamLogo(team) : ""}
             <span class="matchup-team">
                 ${seedMarkup}${safeTeam}
             </span>
+            ${Number.isFinite(score) ? `<span class="bracket-score">${score}</span>` : ""}
         </button>
     `;
 }
 
-function matchupCard(buttons, locked = false) {
+function matchupCard(buttons, locked = false, finalGame = null) {
     return `
-        <div class="matchup-card ${locked ? "is-locked" : ""}">
+        <div class="matchup-card ${locked ? "is-locked" : ""} ${finalGame ? "is-final" : ""}">
             ${buttons.join("")}
+            ${finalGame ? '<p class="result-lock">Final · Result locked</p>' : ""}
         </div>
     `;
+}
+
+function renderBracketMatchup({ conference = "", round, index = "", teams, selectedTeam, seedMap = {}, waiting = false }) {
+    const finalGame = waiting ? null : actualPlayoffResult(round, teams);
+    return matchupCard(teams.map(team => matchupButton({
+        conference, round, index, team,
+        seed: seedMap[team] || "",
+        selected: selectedTeam === team,
+        disabled: waiting || team === "TBD",
+        finalGame
+    })), waiting, finalGame);
 }
 
 function renderConference(conference, conferenceState, ids) {
     const wildcardEl = byId(ids.wildcard);
     const divisionalEl = byId(ids.divisional);
     const conferenceEl = byId(ids.conference);
+    if (!wildcardEl || !divisionalEl || !conferenceEl) return;
+    const seedMap = seedMapFromSeeds(conferenceState.seeds);
+    const firstSeed = conferenceState.seeds.find(item => item.seed === 1)?.name || "TBD";
+    wildcardEl.innerHTML = wildcardMatchupsFromSeeds(conferenceState.seeds).map((matchup, index) =>
+        renderBracketMatchup({
+            conference, round: "wc", index, teams: [matchup.a, matchup.b],
+            selectedTeam: conferenceState.wcWinners[index], seedMap
+        })
+    ).join("");
 
-    if (!wildcardEl || !divisionalEl || !conferenceEl) {
-        return;
-    }
+    const divisional = getDivisionalMatchupsForConference(conferenceState);
+    divisionalEl.innerHTML = (divisional || [{ a: firstSeed, b: "TBD" }, { a: "TBD", b: "TBD" }]).map((matchup, index) =>
+        renderBracketMatchup({
+            conference, round: "div", index, teams: [matchup.a, matchup.b],
+            selectedTeam: conferenceState.divWinners[index], seedMap, waiting: !divisional
+        })
+    ).join("");
 
-    const seeds = conferenceState.seeds;
-    const seedMap = seedMapFromSeeds(seeds);
-    const wildcardMatchups = wildcardMatchupsFromSeeds(seeds);
-
-    const firstSeed =
-        seeds.find(item => item.seed === 1)?.name || "TBD";
-
-    wildcardEl.innerHTML = wildcardMatchups.map((matchup, index) => {
-        const selectedTeam = conferenceState.wcWinners[index];
-
-        return matchupCard([
-            matchupButton({
-                conference,
-                round: "wc",
-                index,
-                team: matchup.a,
-                seed: seedMap[matchup.a],
-                selected: selectedTeam === matchup.a
-            }),
-            matchupButton({
-                conference,
-                round: "wc",
-                index,
-                team: matchup.b,
-                seed: seedMap[matchup.b],
-                selected: selectedTeam === matchup.b
-            })
-        ]);
-    }).join("");
-
-    const wildcardWinners =
-        conferenceState.wcWinners.filter(Boolean);
-
-    const divisionalLocked =
-        wildcardWinners.length !== 3;
-
-    const divisionalMatchups =
-        divisionalMatchupsReseed(seeds, wildcardWinners) || [
-            { a: firstSeed, b: "TBD" },
-            { a: "TBD", b: "TBD" }
-        ];
-
-    divisionalEl.innerHTML = divisionalMatchups.map((matchup, index) => {
-        const selectedTeam = conferenceState.divWinners[index];
-
-        return matchupCard([
-            matchupButton({
-                conference,
-                round: "div",
-                index,
-                team: matchup.a,
-                seed: seedMap[matchup.a] || "",
-                selected: selectedTeam === matchup.a,
-                disabled:
-                    divisionalLocked ||
-                    matchup.a === "TBD"
-            }),
-            matchupButton({
-                conference,
-                round: "div",
-                index,
-                team: matchup.b,
-                seed: seedMap[matchup.b] || "",
-                selected: selectedTeam === matchup.b,
-                disabled:
-                    divisionalLocked ||
-                    matchup.b === "TBD"
-            })
-        ], divisionalLocked);
-    }).join("");
-
-    const conferenceLocked =
-        conferenceState.divWinners.filter(Boolean).length !== 2;
-
-    const conferenceTeams = conferenceLocked
-        ? ["TBD", "TBD"]
-        : conferenceState.divWinners.slice();
-
-    conferenceEl.innerHTML = matchupCard(
-        conferenceTeams.map(team => matchupButton({
-            conference,
-            round: "conf",
-            team,
-            selected: conferenceState.confWinner === team,
-            disabled:
-                conferenceLocked ||
-                team === "TBD"
-        })),
-        conferenceLocked
-    );
+    const conferenceReady = conferenceState.divWinners.every(Boolean);
+    conferenceEl.innerHTML = renderBracketMatchup({
+        conference, round: "conf",
+        teams: conferenceReady ? conferenceState.divWinners : ["TBD", "TBD"],
+        selectedTeam: conferenceState.confWinner, seedMap, waiting: !conferenceReady
+    });
 }
 
 function renderSuperBowl() {
     const element = byId("whatif-superbowl");
-
     if (!element || !whatIfState) return;
-
-    const afcWinner =
-        whatIfState.afc.confWinner || "TBD";
-
-    const nfcWinner =
-        whatIfState.nfc.confWinner || "TBD";
-
-    const isLocked =
-        afcWinner === "TBD" ||
-        nfcWinner === "TBD";
-
-    element.innerHTML = matchupCard([
-        matchupButton({
-            round: "sb",
-            team: afcWinner,
-            selected:
-                whatIfState.superBowl.winner === afcWinner,
-            disabled: isLocked
-        }),
-        matchupButton({
-            round: "sb",
-            team: nfcWinner,
-            selected:
-                whatIfState.superBowl.winner === nfcWinner,
-            disabled: isLocked
-        })
-    ], isLocked);
+    const teams = [whatIfState.afc.confWinner || "TBD", whatIfState.nfc.confWinner || "TBD"];
+    element.innerHTML = renderBracketMatchup({
+        round: "sb", teams,
+        selectedTeam: whatIfState.superBowl.winner, waiting: teams.includes("TBD")
+    });
 }
 
 function handleWhatIfPick(dataset) {
     if (!whatIfState) return;
-
-    const round = dataset.round;
-    const team = dataset.team;
-
+    whatIfState = reconcileWhatIfState();
+    const { round, team, conf } = dataset;
+    const index = Number(dataset.idx);
+    const conference = conf === "AFC" ? whatIfState.afc : conf === "NFC" ? whatIfState.nfc : null;
+    let teams = [], selected;
     if (round === "sb") {
-        whatIfState.superBowl.winner = team;
-        renderWhatIf();
-        return;
+        teams = [whatIfState.afc.confWinner, whatIfState.nfc.confWinner];
+        selected = whatIfState.superBowl.winner;
+    } else if (conference) {
+        if (round === "wc" || round === "div") {
+            const matchups = round === "wc" ? wildcardMatchupsFromSeeds(conference.seeds) : getDivisionalMatchupsForConference(conference);
+            const matchup = Number.isInteger(index) ? matchups?.[index] : null;
+            if (matchup) teams = [matchup.a, matchup.b];
+            selected = round === "wc" ? conference.wcWinners[index] : conference.divWinners[index];
+        } else if (round === "conf") {
+            teams = conference.divWinners;
+            selected = conference.confWinner;
+        }
     }
-
-    const conferenceState =
-        dataset.conf === "AFC"
-            ? whatIfState.afc
-            : whatIfState.nfc;
-
-    if (round === "wc") {
-        conferenceState.wcWinners[Number(dataset.idx)] = team;
-        conferenceState.divWinners = [null, null];
-        conferenceState.confWinner = null;
-        whatIfState.superBowl.winner = null;
-    } else if (round === "div") {
-        conferenceState.divWinners[Number(dataset.idx)] = team;
-        conferenceState.confWinner = null;
-        whatIfState.superBowl.winner = null;
-    } else if (round === "conf") {
-        conferenceState.confWinner = team;
-        whatIfState.superBowl.winner = null;
-    }
-
+    if (teams.length !== 2 || !teams.every(Boolean) || !teams.includes(team) ||
+        selected === team || actualPlayoffResult(round, teams)) return;
+    applySimulatedPick(whatIfState, { round, conference: conf, index }, team);
     renderWhatIf();
 }
 
@@ -1301,6 +1301,7 @@ function renderWhatIfOdds() {
 
 function renderWhatIf() {
     if (!whatIfState) return;
+    whatIfState = reconcileWhatIfState();
 
     renderConference("AFC", whatIfState.afc, {
         wildcard: "whatif-afc-wc",
@@ -1315,8 +1316,22 @@ function renderWhatIf() {
     });
 
     renderSuperBowl();
-    renderWhatIfScore();
-    renderWhatIfOdds();
+    const teams = [...whatIfState.afc.seeds, ...whatIfState.nfc.seeds].map(item => item.name);
+    const assigned = teams.length === 14 && new Set(teams).size === 14 && teams.every(name => getOwner(name));
+    const note = byId("whatif-preview-note");
+    note.hidden = assigned;
+    note.textContent = "Bracket preview: the final playoff seeds are not set yet. Try the placeholders below. Teams, score projections, and scenario percentages will appear automatically when the playoff field is set.";
+    byId("whatif-reset").disabled = false;
+    byId("whatif-score").hidden = !assigned;
+    byId("whatif-odds").hidden = !assigned;
+    byId("whatif-odds-note").hidden = !assigned;
+    if (assigned) {
+        renderWhatIfScore();
+        renderWhatIfOdds();
+    } else {
+        // Cancel any pending calculation for a prior set of seeds.
+        oddsRenderRequest += 1;
+    }
 }
 
 
@@ -1325,24 +1340,98 @@ function renderWhatIf() {
  *********************************/
 
 function applyTeamWins() {
-    const winsLookup = new Map();
-
-    Object.values(teamWinsGrouped).forEach(conference => {
-        Object.values(conference).forEach(division => {
-            division.forEach(team => {
-                winsLookup.set(
-                    team.name,
-                    Number(team.wins) || 0
-                );
-            });
-        });
-    });
+    const winsLookup = new Map(teamRecords.map(team => [team.name, team.wins]));
 
     ["michael", "zach"].forEach(owner => {
         (draftData[owner] || []).forEach(team => {
             team.wins =
                 winsLookup.get(team.name) ?? 0;
         });
+    });
+}
+
+function updateFreshness() {
+    const element = byId("data-freshness");
+    if (!element || !seasonSnapshot) return;
+    const date = new Date(seasonSnapshot.updatedAt);
+    const stale = Date.now() - date.getTime() > 2 * 60 * 60 * 1000;
+    element.classList.toggle("is-stale", stale || refreshFailed);
+    const timestamp = new Intl.DateTimeFormat("en-US", {
+        month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short"
+    }).format(date);
+    element.textContent = `Scores updated ${timestamp}` +
+        (stale || refreshFailed ? " · Showing the last saved scores; waiting for the next update." : " · Updates automatically");
+}
+
+function applySnapshot(snapshot) {
+    const names = [...(draftData.michael || []), ...(draftData.zach || [])].map(team => team.name);
+    if (
+        snapshot.schemaVersion !== 1 || snapshot.season !== SEASON ||
+        !Number.isFinite(Date.parse(snapshot.updatedAt)) ||
+        !Array.isArray(snapshot.teamRecords) || snapshot.teamRecords.length !== 32 ||
+        new Set(snapshot.teamRecords.map(team => team.name)).size !== 32 ||
+        !snapshot.teamRecords.every(team => names.includes(team.name) && Number.isInteger(team.wins) && team.wins >= 0 && team.wins <= 17) ||
+        !Array.from({ length: 18 }, (_, i) => `Week ${i + 1}`).every(key => Array.isArray(snapshot.schedule?.[key])) ||
+        !["wildcard", "divisional", "championship", "superbowl"].every(key => Array.isArray(snapshot.playoffBonus?.[key])) ||
+        !["AFC", "NFC"].every(key => Array.isArray(snapshot.playoffSeeds?.[key]))
+    ) throw new Error("The automatic season snapshot is incomplete or for the wrong season.");
+    const seedsChanged = JSON.stringify(playoffSeeds) !== JSON.stringify(snapshot.playoffSeeds);
+    seasonSnapshot = snapshot;
+    teamRecords = snapshot.teamRecords;
+    scheduleData = snapshot.schedule;
+    playoffBonusData = snapshot.playoffBonus;
+    playoffSeeds = snapshot.playoffSeeds;
+    refreshFailed = false;
+    if (seedsChanged) whatIfState = null;
+    oddsCache.clear();
+    validateCoreData();
+    applyTeamWins();
+    rebuildOwnerMap();
+    updateCurrentWeekDisplay();
+    updateTotalWins();
+    updateTeamLists();
+    updateKeyMatchups();
+    updateFreshness();
+    if (appReady && routeFromLocation() === "whatif") {
+        if (!whatIfState) initWhatIf();
+        else renderWhatIf();
+    }
+}
+
+async function refreshSeason() {
+    if (!appReady || refreshInFlight) return;
+    refreshInFlight = true;
+    lastRefreshAttempt = Date.now();
+    try {
+        const snapshot = await fetchJSON(DATA_PATHS.snapshot);
+        if (snapshot.updatedAt !== seasonSnapshot?.updatedAt) applySnapshot(snapshot);
+        refreshFailed = false;
+    } catch (error) {
+        // Keep the current scores and bracket picks if a refresh fails.
+        refreshFailed = true;
+        console.warn("Season refresh unavailable:", error.message);
+    } finally {
+        refreshInFlight = false;
+        updateFreshness();
+    }
+}
+
+function wireAutomaticUpdates() {
+    window.setInterval(() => {
+        if (!appReady || document.hidden) return;
+        if (displayedWeek !== getCurrentWeekKey()) {
+            updateCurrentWeekDisplay();
+            updateKeyMatchups();
+        }
+        updateFreshness();
+        if (Date.now() - lastRefreshAttempt >= AUTO_REFRESH_MS) refreshSeason();
+    }, 60000);
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden && appReady) {
+            updateCurrentWeekDisplay();
+            updateKeyMatchups();
+            refreshSeason();
+        }
     });
 }
 
@@ -1355,41 +1444,13 @@ async function init() {
     );
 
     try {
-        const requests = [
+        lastRefreshAttempt = Date.now();
+        const [draft, snapshot] = await Promise.all([
             fetchJSON(DATA_PATHS.draft),
-            fetchJSON(DATA_PATHS.schedule),
-            fetchJSON(DATA_PATHS.playoffBonus),
-            fetchJSON(DATA_PATHS.teamWins)
-        ];
-
-        if (SHOW_WHATIF_TAB) {
-            requests.push(
-                fetchJSON(DATA_PATHS.playoffSeeds)
-            );
-        }
-
-        const results = await Promise.all(requests);
-
-        [
-            draftData,
-            scheduleData,
-            playoffBonusData,
-            teamWinsGrouped
-        ] = results;
-
-        playoffSeeds =
-            SHOW_WHATIF_TAB
-                ? results[4]
-                : {};
-
-        validateCoreData();
-        applyTeamWins();
-        rebuildOwnerMap();
-
-        updateCurrentWeekDisplay();
-        updateTotalWins();
-        updateTeamLists();
-        updateKeyMatchups();
+            fetchJSON(DATA_PATHS.snapshot)
+        ]);
+        draftData = draft;
+        applySnapshot(snapshot);
 
         appReady = true;
 
@@ -1509,12 +1570,22 @@ function wireAppRetry() {
     });
 }
 
+// Keep an abbreviation visible if a logo file cannot be loaded.
+document.addEventListener("error", event => {
+    const image = event.target;
+    if (!image.classList?.contains("team-logo")) return;
+    image.hidden = true;
+    const fallback = image.parentElement.querySelector(".team-abbr");
+    if (fallback) fallback.hidden = false;
+}, true);
+
 window.addEventListener("DOMContentLoaded", () => {
     updateWhatIfTabVisibility();
     wireNavigation();
     wireHistory();
     wireWhatIf();
     wireAppRetry();
+    wireAutomaticUpdates();
 
     const initialPage = routeFromLocation();
 

@@ -1,0 +1,9 @@
+{
+  "name": "michael-vs-zach-nfl",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "update": "node scripts/update-data.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
