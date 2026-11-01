@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-01T23:19:10.884Z",
+  "updatedAt": "2026-11-01T23:26:10.854Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 116,
@@ -2030,7 +2030,7 @@
         "away": "Los Angeles Chargers",
         "completed": false,
         "state": "in",
-        "detail": "1:12 - 3rd",
+        "detail": "13:02 - 4th",
         "homeScore": 24,
         "awayScore": 9,
         "winner": null
@@ -2045,7 +2045,7 @@
         "away": "Kansas City Chiefs",
         "completed": false,
         "state": "in",
-        "detail": "12:31 - 3rd",
+        "detail": "9:35 - 3rd",
         "homeScore": 13,
         "awayScore": 17,
         "winner": null
@@ -2060,9 +2060,9 @@
         "away": "New England Patriots",
         "completed": false,
         "state": "in",
-        "detail": "9:29 - 3rd",
+        "detail": "8:35 - 3rd",
         "homeScore": 13,
-        "awayScore": 9,
+        "awayScore": 10,
         "winner": null
       },
       {
