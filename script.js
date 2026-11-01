@@ -347,27 +347,43 @@ function renderAllTeams() {
     const body = byId("all-teams-body");
     if (!body) return;
 
-    body.innerHTML = [...teamRecords]
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map(team => {
-            const owner = getOwner(team.name);
-            const ownerName = owner === "michael"
-                ? "Michael"
-                : owner === "zach"
-                    ? "Zach"
-                    : "Undrafted";
+    const sortedTeams = [...teamRecords].sort((a, b) => {
+        const aPoints = a.wins * 2 + getBonusPoints(a.name);
+        const bPoints = b.wins * 2 + getBonusPoints(b.name);
 
-            const points = team.wins * 2 + getBonusPoints(team.name);
+        return bPoints - aPoints || a.name.localeCompare(b.name);
+    });
 
-            return `<tr>
-                <th scope="row"><span class="table-team">${teamLogo(team.name)}<span>${escapeHTML(team.name)}</span></span></th>
-                <td><span class="owner-badge owner-badge--${owner || "none"}">${ownerName}</span></td>
+    body.innerHTML = sortedTeams.map(team => {
+        const owner = getOwner(team.name);
+
+        const ownerName = owner === "michael"
+            ? "Michael"
+            : owner === "zach"
+                ? "Zach"
+                : "Undrafted";
+
+        const points = team.wins * 2 + getBonusPoints(team.name);
+
+        return `
+            <tr>
+                <th scope="row">
+                    <span class="table-team">
+                        ${teamLogo(team.name)}
+                        <span>${escapeHTML(team.name)}</span>
+                    </span>
+                </th>
+                <td>
+                    <span class="owner-badge owner-badge--${owner || "none"}">
+                        ${ownerName}
+                    </span>
+                </td>
                 <td class="record-cell">${teamRecord(team.name)}</td>
                 <td class="points-cell">${formatNumber(points)}</td>
-            </tr>`;
-        }).join("");
+            </tr>
+        `;
+    }).join("");
 }
-
 function renderTeamList(owner) {
     const list = byId(`${owner}-teams`);
     const summary = byId(`${owner}-summary`);
