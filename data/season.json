@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-01T23:26:10.854Z",
+  "updatedAt": "2026-11-02T01:02:13.138Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 116,
+  "completedRegularGames": 119,
   "complete": false,
   "teamRecords": [
     {
@@ -16,11 +16,11 @@
       "ties": 0
     },
     {
-      "id": "12",
-      "name": "Kansas City Chiefs",
+      "id": "7",
+      "name": "Denver Broncos",
       "conference": "AFC",
-      "wins": 5,
-      "losses": 1,
+      "wins": 6,
+      "losses": 2,
       "ties": 0
     },
     {
@@ -40,8 +40,8 @@
       "ties": 0
     },
     {
-      "id": "7",
-      "name": "Denver Broncos",
+      "id": "12",
+      "name": "Kansas City Chiefs",
       "conference": "AFC",
       "wins": 5,
       "losses": 2,
@@ -56,18 +56,18 @@
       "ties": 0
     },
     {
-      "id": "5",
-      "name": "Cleveland Browns",
+      "id": "17",
+      "name": "New England Patriots",
       "conference": "AFC",
       "wins": 5,
       "losses": 3,
       "ties": 0
     },
     {
-      "id": "17",
-      "name": "New England Patriots",
+      "id": "5",
+      "name": "Cleveland Browns",
       "conference": "AFC",
-      "wins": 4,
+      "wins": 5,
       "losses": 3,
       "ties": 0
     },
@@ -116,7 +116,7 @@
       "name": "Miami Dolphins",
       "conference": "AFC",
       "wins": 1,
-      "losses": 5,
+      "losses": 6,
       "ties": 0
     },
     {
@@ -132,7 +132,7 @@
       "name": "Los Angeles Chargers",
       "conference": "AFC",
       "wins": 0,
-      "losses": 6,
+      "losses": 7,
       "ties": 0
     },
     {
@@ -192,16 +192,16 @@
       "ties": 0
     },
     {
-      "id": "29",
-      "name": "Carolina Panthers",
+      "id": "14",
+      "name": "Los Angeles Rams",
       "conference": "NFC",
-      "wins": 3,
+      "wins": 4,
       "losses": 4,
       "ties": 0
     },
     {
-      "id": "14",
-      "name": "Los Angeles Rams",
+      "id": "29",
+      "name": "Carolina Panthers",
       "conference": "NFC",
       "wins": 3,
       "losses": 4,
@@ -2028,12 +2028,12 @@
         "round": 0,
         "home": "Los Angeles Rams",
         "away": "Los Angeles Chargers",
-        "completed": false,
-        "state": "in",
-        "detail": "13:02 - 4th",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 24,
         "awayScore": 9,
-        "winner": null
+        "winner": "Los Angeles Rams"
       },
       {
         "id": "401873033",
@@ -2043,12 +2043,12 @@
         "round": 0,
         "home": "Denver Broncos",
         "away": "Kansas City Chiefs",
-        "completed": false,
-        "state": "in",
-        "detail": "9:35 - 3rd",
-        "homeScore": 13,
-        "awayScore": 17,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 28,
+        "awayScore": 24,
+        "winner": "Denver Broncos"
       },
       {
         "id": "401873034",
@@ -2058,12 +2058,12 @@
         "round": 0,
         "home": "Miami Dolphins",
         "away": "New England Patriots",
-        "completed": false,
-        "state": "in",
-        "detail": "8:35 - 3rd",
-        "homeScore": 13,
-        "awayScore": 10,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 19,
+        "awayScore": 24,
+        "winner": "New England Patriots"
       },
       {
         "id": "401873035",
