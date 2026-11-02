@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-02T01:02:13.138Z",
+  "updatedAt": "2026-11-02T07:40:04.539Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 119,
+  "completedRegularGames": 120,
   "complete": false,
   "teamRecords": [
     {
@@ -240,6 +240,14 @@
       "ties": 0
     },
     {
+      "id": "28",
+      "name": "Washington Commanders",
+      "conference": "NFC",
+      "wins": 2,
+      "losses": 4,
+      "ties": 1
+    },
+    {
       "id": "18",
       "name": "New Orleans Saints",
       "conference": "NFC",
@@ -252,16 +260,8 @@
       "name": "Philadelphia Eagles",
       "conference": "NFC",
       "wins": 2,
-      "losses": 5,
+      "losses": 6,
       "ties": 0
-    },
-    {
-      "id": "28",
-      "name": "Washington Commanders",
-      "conference": "NFC",
-      "wins": 1,
-      "losses": 4,
-      "ties": 1
     }
   ],
   "schedule": {
@@ -2073,12 +2073,12 @@
         "round": 0,
         "home": "Washington Commanders",
         "away": "Philadelphia Eagles",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/1 - 8:20 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 27,
+        "awayScore": 10,
+        "winner": "Washington Commanders"
       },
       {
         "id": "401873036",
