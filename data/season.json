@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-03T00:02:45.124Z",
+  "updatedAt": "2026-11-03T06:44:48.189Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 120,
+  "completedRegularGames": 121,
   "complete": false,
   "teamRecords": [
     {
@@ -152,16 +152,16 @@
       "ties": 0
     },
     {
-      "id": "8",
-      "name": "Detroit Lions",
+      "id": "3",
+      "name": "Chicago Bears",
       "conference": "NFC",
-      "wins": 5,
+      "wins": 6,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "3",
-      "name": "Chicago Bears",
+      "id": "8",
+      "name": "Detroit Lions",
       "conference": "NFC",
       "wins": 5,
       "losses": 2,
@@ -188,7 +188,7 @@
       "name": "Seattle Seahawks",
       "conference": "NFC",
       "wins": 4,
-      "losses": 3,
+      "losses": 4,
       "ties": 0
     },
     {
@@ -2088,12 +2088,12 @@
         "round": 0,
         "home": "Seattle Seahawks",
         "away": "Chicago Bears",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/2 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 17,
+        "awayScore": 34,
+        "winner": "Chicago Bears"
       }
     ],
     "Week 9": [
