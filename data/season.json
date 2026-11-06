@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-06T03:40:07.947Z",
+  "updatedAt": "2026-11-06T11:31:32.867Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 121,
+  "completedRegularGames": 122,
   "complete": false,
   "teamRecords": [
     {
@@ -24,18 +24,18 @@
       "ties": 0
     },
     {
-      "id": "23",
-      "name": "Pittsburgh Steelers",
+      "id": "30",
+      "name": "Jacksonville Jaguars",
       "conference": "AFC",
       "wins": 6,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "30",
-      "name": "Jacksonville Jaguars",
+      "id": "23",
+      "name": "Pittsburgh Steelers",
       "conference": "AFC",
-      "wins": 5,
+      "wins": 6,
       "losses": 2,
       "ties": 0
     },
@@ -84,7 +84,7 @@
       "name": "Baltimore Ravens",
       "conference": "AFC",
       "wins": 4,
-      "losses": 4,
+      "losses": 5,
       "ties": 0
     },
     {
@@ -2105,12 +2105,12 @@
         "round": 0,
         "home": "Baltimore Ravens",
         "away": "Jacksonville Jaguars",
-        "completed": false,
-        "state": "in",
-        "detail": "11:52 - 4th",
-        "homeScore": 3,
-        "awayScore": 26,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 10,
+        "awayScore": 33,
+        "winner": "Jacksonville Jaguars"
       },
       {
         "id": "401873038",
