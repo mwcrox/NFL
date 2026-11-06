@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-05T23:37:22.028Z",
+  "updatedAt": "2026-11-06T03:40:07.947Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 121,
@@ -2106,10 +2106,10 @@
         "home": "Baltimore Ravens",
         "away": "Jacksonville Jaguars",
         "completed": false,
-        "state": "pre",
-        "detail": "11/5 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "11:52 - 4th",
+        "homeScore": 3,
+        "awayScore": 26,
         "winner": null
       },
       {
