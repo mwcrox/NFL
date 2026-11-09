@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-09T01:58:29.987Z",
+  "updatedAt": "2026-11-09T09:45:41.591Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 134,
+  "completedRegularGames": 135,
   "complete": false,
   "teamRecords": [
     {
@@ -152,16 +152,16 @@
       "ties": 0
     },
     {
-      "id": "8",
-      "name": "Detroit Lions",
+      "id": "3",
+      "name": "Chicago Bears",
       "conference": "NFC",
-      "wins": 6,
+      "wins": 7,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "3",
-      "name": "Chicago Bears",
+      "id": "8",
+      "name": "Detroit Lions",
       "conference": "NFC",
       "wins": 6,
       "losses": 2,
@@ -208,14 +208,6 @@
       "ties": 0
     },
     {
-      "id": "27",
-      "name": "Tampa Bay Buccaneers",
-      "conference": "NFC",
-      "wins": 3,
-      "losses": 5,
-      "ties": 0
-    },
-    {
       "id": "29",
       "name": "Carolina Panthers",
       "conference": "NFC",
@@ -229,6 +221,14 @@
       "conference": "NFC",
       "wins": 3,
       "losses": 5,
+      "ties": 0
+    },
+    {
+      "id": "27",
+      "name": "Tampa Bay Buccaneers",
+      "conference": "NFC",
+      "wins": 3,
+      "losses": 6,
       "ties": 0
     },
     {
@@ -2300,12 +2300,12 @@
         "round": 0,
         "home": "Chicago Bears",
         "away": "Tampa Bay Buccaneers",
-        "completed": false,
-        "state": "in",
-        "detail": "14:55 - 2nd",
-        "homeScore": 14,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 27,
+        "awayScore": 24,
+        "winner": "Chicago Bears"
       },
       {
         "id": "401873051",
