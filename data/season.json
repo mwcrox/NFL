@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-09T09:45:41.591Z",
+  "updatedAt": "2026-11-09T20:42:25.270Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 135,
@@ -2582,21 +2582,6 @@
         "winner": null
       },
       {
-        "id": "401873069",
-        "date": "2026-11-22T18:00Z",
-        "phase": 2,
-        "week": 11,
-        "round": 0,
-        "home": "New York Giants",
-        "away": "Jacksonville Jaguars",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/22 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
-      },
-      {
         "id": "401873070",
         "date": "2026-11-22T18:00Z",
         "phase": 2,
@@ -2657,6 +2642,21 @@
         "winner": null
       },
       {
+        "id": "401873076",
+        "date": "2026-11-22T18:00Z",
+        "phase": 2,
+        "week": 11,
+        "round": 0,
+        "home": "Philadelphia Eagles",
+        "away": "Pittsburgh Steelers",
+        "completed": false,
+        "state": "pre",
+        "detail": "11/22 - 1:00 PM EST",
+        "homeScore": 0,
+        "awayScore": 0,
+        "winner": null
+      },
+      {
         "id": "401873074",
         "date": "2026-11-22T21:05Z",
         "phase": 2,
@@ -2672,13 +2672,13 @@
         "winner": null
       },
       {
-        "id": "401873075",
+        "id": "401873069",
         "date": "2026-11-22T21:25Z",
         "phase": 2,
         "week": 11,
         "round": 0,
-        "home": "Denver Broncos",
-        "away": "Las Vegas Raiders",
+        "home": "New York Giants",
+        "away": "Jacksonville Jaguars",
         "completed": false,
         "state": "pre",
         "detail": "11/22 - 4:25 PM EST",
@@ -2687,13 +2687,13 @@
         "winner": null
       },
       {
-        "id": "401873076",
+        "id": "401873075",
         "date": "2026-11-22T21:25Z",
         "phase": 2,
         "week": 11,
         "round": 0,
-        "home": "Philadelphia Eagles",
-        "away": "Pittsburgh Steelers",
+        "home": "Denver Broncos",
+        "away": "Las Vegas Raiders",
         "completed": false,
         "state": "pre",
         "detail": "11/22 - 4:25 PM EST",
