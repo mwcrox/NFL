@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-10T02:57:17.080Z",
+  "updatedAt": "2026-11-10T11:07:55.760Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 135,
+  "completedRegularGames": 136,
   "complete": false,
   "teamRecords": [
     {
       "id": "2",
       "name": "Buffalo Bills",
       "conference": "AFC",
-      "wins": 6,
+      "wins": 7,
       "losses": 1,
       "ties": 0
     },
@@ -144,14 +144,6 @@
       "ties": 0
     },
     {
-      "id": "16",
-      "name": "Minnesota Vikings",
-      "conference": "NFC",
-      "wins": 6,
-      "losses": 1,
-      "ties": 0
-    },
-    {
       "id": "3",
       "name": "Chicago Bears",
       "conference": "NFC",
@@ -162,6 +154,14 @@
     {
       "id": "8",
       "name": "Detroit Lions",
+      "conference": "NFC",
+      "wins": 6,
+      "losses": 2,
+      "ties": 0
+    },
+    {
+      "id": "16",
+      "name": "Minnesota Vikings",
       "conference": "NFC",
       "wins": 6,
       "losses": 2,
@@ -2315,12 +2315,12 @@
         "round": 0,
         "home": "Minnesota Vikings",
         "away": "Buffalo Bills",
-        "completed": false,
-        "state": "in",
-        "detail": "Halftime",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 6,
-        "awayScore": 10,
-        "winner": null
+        "awayScore": 23,
+        "winner": "Buffalo Bills"
       }
     ],
     "Week 10": [
