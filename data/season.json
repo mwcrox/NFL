@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-09T20:42:25.270Z",
+  "updatedAt": "2026-11-10T02:57:17.080Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 135,
@@ -2316,10 +2316,10 @@
         "home": "Minnesota Vikings",
         "away": "Buffalo Bills",
         "completed": false,
-        "state": "pre",
-        "detail": "11/9 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "Halftime",
+        "homeScore": 6,
+        "awayScore": 10,
         "winner": null
       }
     ],
