@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-12T23:53:04.102Z",
+  "updatedAt": "2026-11-13T06:41:06.407Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 136,
+  "completedRegularGames": 137,
   "complete": false,
   "teamRecords": [
     {
@@ -180,7 +180,7 @@
       "name": "New York Giants",
       "conference": "NFC",
       "wins": 5,
-      "losses": 2,
+      "losses": 3,
       "ties": 1
     },
     {
@@ -224,6 +224,14 @@
       "ties": 0
     },
     {
+      "id": "28",
+      "name": "Washington Commanders",
+      "conference": "NFC",
+      "wins": 3,
+      "losses": 5,
+      "ties": 1
+    },
+    {
       "id": "27",
       "name": "Tampa Bay Buccaneers",
       "conference": "NFC",
@@ -246,14 +254,6 @@
       "wins": 3,
       "losses": 6,
       "ties": 0
-    },
-    {
-      "id": "28",
-      "name": "Washington Commanders",
-      "conference": "NFC",
-      "wins": 2,
-      "losses": 5,
-      "ties": 1
     },
     {
       "id": "21",
@@ -2332,12 +2332,12 @@
         "round": 0,
         "home": "New York Giants",
         "away": "Washington Commanders",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/12 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 21,
+        "awayScore": 24,
+        "winner": "Washington Commanders"
       },
       {
         "id": "401873053",
