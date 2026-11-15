@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-15T14:48:07.214Z",
+  "updatedAt": "2026-11-15T20:24:10.652Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 137,
+  "completedRegularGames": 138,
   "complete": false,
   "teamRecords": [
     {
@@ -56,19 +56,19 @@
       "ties": 0
     },
     {
-      "id": "17",
-      "name": "New England Patriots",
+      "id": "5",
+      "name": "Cleveland Browns",
       "conference": "AFC",
       "wins": 5,
       "losses": 4,
       "ties": 0
     },
     {
-      "id": "5",
-      "name": "Cleveland Browns",
+      "id": "17",
+      "name": "New England Patriots",
       "conference": "AFC",
       "wins": 5,
-      "losses": 4,
+      "losses": 5,
       "ties": 0
     },
     {
@@ -144,18 +144,18 @@
       "ties": 0
     },
     {
-      "id": "3",
-      "name": "Chicago Bears",
+      "id": "8",
+      "name": "Detroit Lions",
       "conference": "NFC",
       "wins": 7,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "8",
-      "name": "Detroit Lions",
+      "id": "3",
+      "name": "Chicago Bears",
       "conference": "NFC",
-      "wins": 6,
+      "wins": 7,
       "losses": 2,
       "ties": 0
     },
@@ -2347,12 +2347,12 @@
         "round": 0,
         "home": "Detroit Lions",
         "away": "New England Patriots",
-        "completed": false,
-        "state": "in",
-        "detail": "9:12 - 1st",
-        "homeScore": 0,
-        "awayScore": 3,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 35,
+        "awayScore": 10,
+        "winner": "Detroit Lions"
       },
       {
         "id": "401873054",
@@ -2363,10 +2363,10 @@
         "home": "New York Jets",
         "away": "Buffalo Bills",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "0:20 - 3rd",
+        "homeScore": 12,
+        "awayScore": 24,
         "winner": null
       },
       {
@@ -2378,10 +2378,10 @@
         "home": "New Orleans Saints",
         "away": "Carolina Panthers",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "14:50 - 4th",
+        "homeScore": 7,
+        "awayScore": 10,
         "winner": null
       },
       {
@@ -2393,10 +2393,10 @@
         "home": "Cleveland Browns",
         "away": "Houston Texans",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "14:40 - 4th",
+        "homeScore": 20,
+        "awayScore": 17,
         "winner": null
       },
       {
@@ -2408,10 +2408,10 @@
         "home": "Tennessee Titans",
         "away": "Jacksonville Jaguars",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "3:49 - 3rd",
+        "homeScore": 13,
+        "awayScore": 23,
         "winner": null
       },
       {
@@ -2423,10 +2423,10 @@
         "home": "Atlanta Falcons",
         "away": "Kansas City Chiefs",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "13:01 - 4th",
+        "homeScore": 3,
+        "awayScore": 21,
         "winner": null
       },
       {
@@ -2438,10 +2438,10 @@
         "home": "Indianapolis Colts",
         "away": "Miami Dolphins",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "1:31 - 3rd",
+        "homeScore": 24,
+        "awayScore": 16,
         "winner": null
       },
       {
@@ -2453,10 +2453,10 @@
         "home": "Green Bay Packers",
         "away": "Minnesota Vikings",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "15:00 - 4th",
+        "homeScore": 10,
+        "awayScore": 20,
         "winner": null
       },
       {
