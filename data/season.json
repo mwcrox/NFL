@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-15T07:12:28.429Z",
+  "updatedAt": "2026-11-15T14:48:07.214Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 137,
@@ -2348,10 +2348,10 @@
         "home": "Detroit Lions",
         "away": "New England Patriots",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 9:30 AM EST",
+        "state": "in",
+        "detail": "9:12 - 1st",
         "homeScore": 0,
-        "awayScore": 0,
+        "awayScore": 3,
         "winner": null
       },
       {
