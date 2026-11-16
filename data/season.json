@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-16T00:22:44.141Z",
+  "updatedAt": "2026-11-16T07:17:33.172Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 147,
+  "completedRegularGames": 149,
   "complete": false,
   "teamRecords": [
     {
@@ -32,6 +32,14 @@
       "ties": 0
     },
     {
+      "id": "4",
+      "name": "Cincinnati Bengals",
+      "conference": "AFC",
+      "wins": 7,
+      "losses": 2,
+      "ties": 0
+    },
+    {
       "id": "7",
       "name": "Denver Broncos",
       "conference": "AFC",
@@ -44,15 +52,7 @@
       "name": "Pittsburgh Steelers",
       "conference": "AFC",
       "wins": 6,
-      "losses": 2,
-      "ties": 0
-    },
-    {
-      "id": "4",
-      "name": "Cincinnati Bengals",
-      "conference": "AFC",
-      "wins": 6,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
@@ -139,7 +139,7 @@
       "id": "25",
       "name": "San Francisco 49ers",
       "conference": "NFC",
-      "wins": 7,
+      "wins": 8,
       "losses": 1,
       "ties": 0
     },
@@ -212,7 +212,7 @@
       "name": "Dallas Cowboys",
       "conference": "NFC",
       "wins": 4,
-      "losses": 5,
+      "losses": 6,
       "ties": 0
     },
     {
@@ -2497,12 +2497,12 @@
         "round": 0,
         "home": "Dallas Cowboys",
         "away": "San Francisco 49ers",
-        "completed": false,
-        "state": "in",
-        "detail": "3:23 - 4th",
-        "homeScore": 32,
-        "awayScore": 44,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 40,
+        "awayScore": 46,
+        "winner": "San Francisco 49ers"
       },
       {
         "id": "401873064",
@@ -2512,12 +2512,12 @@
         "round": 0,
         "home": "Cincinnati Bengals",
         "away": "Pittsburgh Steelers",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 8:20 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 38,
+        "awayScore": 18,
+        "winner": "Cincinnati Bengals"
       },
       {
         "id": "401873065",
