@@ -1,18 +1,34 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-15T20:24:10.652Z",
+  "updatedAt": "2026-11-16T00:22:44.141Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 138,
+  "completedRegularGames": 147,
   "complete": false,
   "teamRecords": [
     {
       "id": "2",
       "name": "Buffalo Bills",
       "conference": "AFC",
-      "wins": 7,
+      "wins": 8,
       "losses": 1,
+      "ties": 0
+    },
+    {
+      "id": "12",
+      "name": "Kansas City Chiefs",
+      "conference": "AFC",
+      "wins": 7,
+      "losses": 2,
+      "ties": 0
+    },
+    {
+      "id": "30",
+      "name": "Jacksonville Jaguars",
+      "conference": "AFC",
+      "wins": 7,
+      "losses": 2,
       "ties": 0
     },
     {
@@ -24,24 +40,8 @@
       "ties": 0
     },
     {
-      "id": "30",
-      "name": "Jacksonville Jaguars",
-      "conference": "AFC",
-      "wins": 6,
-      "losses": 2,
-      "ties": 0
-    },
-    {
       "id": "23",
       "name": "Pittsburgh Steelers",
-      "conference": "AFC",
-      "wins": 6,
-      "losses": 2,
-      "ties": 0
-    },
-    {
-      "id": "12",
-      "name": "Kansas City Chiefs",
       "conference": "AFC",
       "wins": 6,
       "losses": 2,
@@ -59,7 +59,7 @@
       "id": "5",
       "name": "Cleveland Browns",
       "conference": "AFC",
-      "wins": 5,
+      "wins": 6,
       "losses": 4,
       "ties": 0
     },
@@ -72,14 +72,6 @@
       "ties": 0
     },
     {
-      "id": "13",
-      "name": "Las Vegas Raiders",
-      "conference": "AFC",
-      "wins": 4,
-      "losses": 5,
-      "ties": 0
-    },
-    {
       "id": "33",
       "name": "Baltimore Ravens",
       "conference": "AFC",
@@ -88,11 +80,27 @@
       "ties": 0
     },
     {
+      "id": "13",
+      "name": "Las Vegas Raiders",
+      "conference": "AFC",
+      "wins": 4,
+      "losses": 6,
+      "ties": 0
+    },
+    {
       "id": "34",
       "name": "Houston Texans",
       "conference": "AFC",
       "wins": 3,
-      "losses": 5,
+      "losses": 6,
+      "ties": 0
+    },
+    {
+      "id": "11",
+      "name": "Indianapolis Colts",
+      "conference": "AFC",
+      "wins": 3,
+      "losses": 7,
       "ties": 0
     },
     {
@@ -100,15 +108,7 @@
       "name": "New York Jets",
       "conference": "AFC",
       "wins": 2,
-      "losses": 7,
-      "ties": 0
-    },
-    {
-      "id": "11",
-      "name": "Indianapolis Colts",
-      "conference": "AFC",
-      "wins": 2,
-      "losses": 7,
+      "losses": 8,
       "ties": 0
     },
     {
@@ -116,7 +116,7 @@
       "name": "Miami Dolphins",
       "conference": "AFC",
       "wins": 1,
-      "losses": 7,
+      "losses": 8,
       "ties": 0
     },
     {
@@ -124,7 +124,7 @@
       "name": "Tennessee Titans",
       "conference": "AFC",
       "wins": 1,
-      "losses": 7,
+      "losses": 8,
       "ties": 0
     },
     {
@@ -152,6 +152,14 @@
       "ties": 0
     },
     {
+      "id": "16",
+      "name": "Minnesota Vikings",
+      "conference": "NFC",
+      "wins": 7,
+      "losses": 2,
+      "ties": 0
+    },
+    {
       "id": "3",
       "name": "Chicago Bears",
       "conference": "NFC",
@@ -160,19 +168,27 @@
       "ties": 0
     },
     {
-      "id": "16",
-      "name": "Minnesota Vikings",
-      "conference": "NFC",
-      "wins": 6,
-      "losses": 2,
-      "ties": 0
-    },
-    {
       "id": "9",
       "name": "Green Bay Packers",
       "conference": "NFC",
       "wins": 6,
-      "losses": 3,
+      "losses": 4,
+      "ties": 0
+    },
+    {
+      "id": "26",
+      "name": "Seattle Seahawks",
+      "conference": "NFC",
+      "wins": 6,
+      "losses": 4,
+      "ties": 0
+    },
+    {
+      "id": "14",
+      "name": "Los Angeles Rams",
+      "conference": "NFC",
+      "wins": 6,
+      "losses": 4,
       "ties": 0
     },
     {
@@ -184,19 +200,11 @@
       "ties": 1
     },
     {
-      "id": "26",
-      "name": "Seattle Seahawks",
+      "id": "29",
+      "name": "Carolina Panthers",
       "conference": "NFC",
-      "wins": 5,
-      "losses": 4,
-      "ties": 0
-    },
-    {
-      "id": "14",
-      "name": "Los Angeles Rams",
-      "conference": "NFC",
-      "wins": 5,
-      "losses": 4,
+      "wins": 4,
+      "losses": 5,
       "ties": 0
     },
     {
@@ -204,22 +212,6 @@
       "name": "Dallas Cowboys",
       "conference": "NFC",
       "wins": 4,
-      "losses": 5,
-      "ties": 0
-    },
-    {
-      "id": "29",
-      "name": "Carolina Panthers",
-      "conference": "NFC",
-      "wins": 3,
-      "losses": 5,
-      "ties": 0
-    },
-    {
-      "id": "18",
-      "name": "New Orleans Saints",
-      "conference": "NFC",
-      "wins": 3,
       "losses": 5,
       "ties": 0
     },
@@ -240,11 +232,19 @@
       "ties": 0
     },
     {
+      "id": "18",
+      "name": "New Orleans Saints",
+      "conference": "NFC",
+      "wins": 3,
+      "losses": 6,
+      "ties": 0
+    },
+    {
       "id": "1",
       "name": "Atlanta Falcons",
       "conference": "NFC",
       "wins": 3,
-      "losses": 6,
+      "losses": 7,
       "ties": 0
     },
     {
@@ -252,7 +252,7 @@
       "name": "Arizona Cardinals",
       "conference": "NFC",
       "wins": 3,
-      "losses": 6,
+      "losses": 7,
       "ties": 0
     },
     {
@@ -2362,12 +2362,12 @@
         "round": 0,
         "home": "New York Jets",
         "away": "Buffalo Bills",
-        "completed": false,
-        "state": "in",
-        "detail": "0:20 - 3rd",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 12,
-        "awayScore": 24,
-        "winner": null
+        "awayScore": 31,
+        "winner": "Buffalo Bills"
       },
       {
         "id": "401873055",
@@ -2377,12 +2377,12 @@
         "round": 0,
         "home": "New Orleans Saints",
         "away": "Carolina Panthers",
-        "completed": false,
-        "state": "in",
-        "detail": "14:50 - 4th",
-        "homeScore": 7,
-        "awayScore": 10,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 17,
+        "awayScore": 20,
+        "winner": "Carolina Panthers"
       },
       {
         "id": "401873056",
@@ -2392,12 +2392,12 @@
         "round": 0,
         "home": "Cleveland Browns",
         "away": "Houston Texans",
-        "completed": false,
-        "state": "in",
-        "detail": "14:40 - 4th",
-        "homeScore": 20,
-        "awayScore": 17,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 27,
+        "awayScore": 24,
+        "winner": "Cleveland Browns"
       },
       {
         "id": "401873057",
@@ -2407,12 +2407,12 @@
         "round": 0,
         "home": "Tennessee Titans",
         "away": "Jacksonville Jaguars",
-        "completed": false,
-        "state": "in",
-        "detail": "3:49 - 3rd",
-        "homeScore": 13,
-        "awayScore": 23,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 23,
+        "awayScore": 40,
+        "winner": "Jacksonville Jaguars"
       },
       {
         "id": "401873058",
@@ -2422,12 +2422,12 @@
         "round": 0,
         "home": "Atlanta Falcons",
         "away": "Kansas City Chiefs",
-        "completed": false,
-        "state": "in",
-        "detail": "13:01 - 4th",
-        "homeScore": 3,
-        "awayScore": 21,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 13,
+        "awayScore": 35,
+        "winner": "Kansas City Chiefs"
       },
       {
         "id": "401873059",
@@ -2437,12 +2437,12 @@
         "round": 0,
         "home": "Indianapolis Colts",
         "away": "Miami Dolphins",
-        "completed": false,
-        "state": "in",
-        "detail": "1:31 - 3rd",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 24,
-        "awayScore": 16,
-        "winner": null
+        "awayScore": 22,
+        "winner": "Indianapolis Colts"
       },
       {
         "id": "401873060",
@@ -2452,12 +2452,12 @@
         "round": 0,
         "home": "Green Bay Packers",
         "away": "Minnesota Vikings",
-        "completed": false,
-        "state": "in",
-        "detail": "15:00 - 4th",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 10,
-        "awayScore": 20,
-        "winner": null
+        "awayScore": 30,
+        "winner": "Minnesota Vikings"
       },
       {
         "id": "401873061",
@@ -2467,12 +2467,12 @@
         "round": 0,
         "home": "Arizona Cardinals",
         "away": "Los Angeles Rams",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 4:05 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 6,
+        "awayScore": 34,
+        "winner": "Los Angeles Rams"
       },
       {
         "id": "401873062",
@@ -2482,12 +2482,12 @@
         "round": 0,
         "home": "Las Vegas Raiders",
         "away": "Seattle Seahawks",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 4:05 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 13,
+        "awayScore": 21,
+        "winner": "Seattle Seahawks"
       },
       {
         "id": "401873063",
@@ -2498,10 +2498,10 @@
         "home": "Dallas Cowboys",
         "away": "San Francisco 49ers",
         "completed": false,
-        "state": "pre",
-        "detail": "11/15 - 4:25 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "3:23 - 4th",
+        "homeScore": 32,
+        "awayScore": 44,
         "winner": null
       },
       {
