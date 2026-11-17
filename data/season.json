@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-17T01:04:17.416Z",
+  "updatedAt": "2026-11-17T09:11:54.875Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 149,
+  "completedRegularGames": 150,
   "complete": false,
   "teamRecords": [
     {
@@ -72,16 +72,16 @@
       "ties": 0
     },
     {
-      "id": "33",
-      "name": "Baltimore Ravens",
+      "id": "13",
+      "name": "Las Vegas Raiders",
       "conference": "AFC",
       "wins": 4,
-      "losses": 5,
+      "losses": 6,
       "ties": 0
     },
     {
-      "id": "13",
-      "name": "Las Vegas Raiders",
+      "id": "33",
+      "name": "Baltimore Ravens",
       "conference": "AFC",
       "wins": 4,
       "losses": 6,
@@ -112,6 +112,14 @@
       "ties": 0
     },
     {
+      "id": "24",
+      "name": "Los Angeles Chargers",
+      "conference": "AFC",
+      "wins": 1,
+      "losses": 8,
+      "ties": 0
+    },
+    {
       "id": "15",
       "name": "Miami Dolphins",
       "conference": "AFC",
@@ -124,14 +132,6 @@
       "name": "Tennessee Titans",
       "conference": "AFC",
       "wins": 1,
-      "losses": 8,
-      "ties": 0
-    },
-    {
-      "id": "24",
-      "name": "Los Angeles Chargers",
-      "conference": "AFC",
-      "wins": 0,
       "losses": 8,
       "ties": 0
     },
@@ -2527,12 +2527,12 @@
         "round": 0,
         "home": "Baltimore Ravens",
         "away": "Los Angeles Chargers",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/16 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 20,
+        "awayScore": 23,
+        "winner": "Los Angeles Chargers"
       }
     ],
     "Week 11": [
