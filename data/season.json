@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-19T23:49:59.452Z",
+  "updatedAt": "2026-11-20T07:10:41.378Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 150,
+  "completedRegularGames": 151,
   "complete": false,
   "teamRecords": [
     {
@@ -72,6 +72,14 @@
       "ties": 0
     },
     {
+      "id": "34",
+      "name": "Houston Texans",
+      "conference": "AFC",
+      "wins": 4,
+      "losses": 6,
+      "ties": 0
+    },
+    {
       "id": "13",
       "name": "Las Vegas Raiders",
       "conference": "AFC",
@@ -88,19 +96,11 @@
       "ties": 0
     },
     {
-      "id": "34",
-      "name": "Houston Texans",
-      "conference": "AFC",
-      "wins": 3,
-      "losses": 6,
-      "ties": 0
-    },
-    {
       "id": "11",
       "name": "Indianapolis Colts",
       "conference": "AFC",
       "wins": 3,
-      "losses": 7,
+      "losses": 8,
       "ties": 0
     },
     {
@@ -2544,12 +2544,12 @@
         "round": 0,
         "home": "Houston Texans",
         "away": "Indianapolis Colts",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/19 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 26,
+        "awayScore": 3,
+        "winner": "Houston Texans"
       },
       {
         "id": "401873067",
