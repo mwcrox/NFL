@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-23T01:59:00.723Z",
+  "updatedAt": "2026-11-23T10:43:14.332Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 161,
+  "completedRegularGames": 162,
   "complete": false,
   "teamRecords": [
     {
@@ -139,7 +139,7 @@
       "id": "25",
       "name": "San Francisco 49ers",
       "conference": "NFC",
-      "wins": 8,
+      "wins": 9,
       "losses": 1,
       "ties": 0
     },
@@ -164,7 +164,7 @@
       "name": "Minnesota Vikings",
       "conference": "NFC",
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
@@ -2709,12 +2709,12 @@
         "round": 0,
         "home": "San Francisco 49ers",
         "away": "Minnesota Vikings",
-        "completed": false,
-        "state": "in",
-        "detail": "1:13 - 1st",
-        "homeScore": 7,
-        "awayScore": 7,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 35,
+        "awayScore": 10,
+        "winner": "San Francisco 49ers"
       },
       {
         "id": "401873078",
