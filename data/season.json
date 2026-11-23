@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-22T21:16:04.364Z",
+  "updatedAt": "2026-11-23T01:59:00.723Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 157,
+  "completedRegularGames": 161,
   "complete": false,
   "teamRecords": [
     {
@@ -16,18 +16,18 @@
       "ties": 0
     },
     {
-      "id": "12",
-      "name": "Kansas City Chiefs",
+      "id": "7",
+      "name": "Denver Broncos",
       "conference": "AFC",
       "wins": 8,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "30",
-      "name": "Jacksonville Jaguars",
+      "id": "12",
+      "name": "Kansas City Chiefs",
       "conference": "AFC",
-      "wins": 7,
+      "wins": 8,
       "losses": 2,
       "ties": 0
     },
@@ -40,11 +40,11 @@
       "ties": 0
     },
     {
-      "id": "7",
-      "name": "Denver Broncos",
+      "id": "30",
+      "name": "Jacksonville Jaguars",
       "conference": "AFC",
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
@@ -84,7 +84,7 @@
       "name": "Las Vegas Raiders",
       "conference": "AFC",
       "wins": 4,
-      "losses": 6,
+      "losses": 7,
       "ties": 0
     },
     {
@@ -92,7 +92,15 @@
       "name": "Baltimore Ravens",
       "conference": "AFC",
       "wins": 4,
-      "losses": 6,
+      "losses": 7,
+      "ties": 0
+    },
+    {
+      "id": "20",
+      "name": "New York Jets",
+      "conference": "AFC",
+      "wins": 3,
+      "losses": 8,
       "ties": 0
     },
     {
@@ -104,24 +112,8 @@
       "ties": 0
     },
     {
-      "id": "20",
-      "name": "New York Jets",
-      "conference": "AFC",
-      "wins": 2,
-      "losses": 8,
-      "ties": 0
-    },
-    {
       "id": "24",
       "name": "Los Angeles Chargers",
-      "conference": "AFC",
-      "wins": 1,
-      "losses": 8,
-      "ties": 0
-    },
-    {
-      "id": "10",
-      "name": "Tennessee Titans",
       "conference": "AFC",
       "wins": 1,
       "losses": 9,
@@ -130,6 +122,14 @@
     {
       "id": "15",
       "name": "Miami Dolphins",
+      "conference": "AFC",
+      "wins": 1,
+      "losses": 9,
+      "ties": 0
+    },
+    {
+      "id": "10",
+      "name": "Tennessee Titans",
       "conference": "AFC",
       "wins": 1,
       "losses": 9,
@@ -168,6 +168,14 @@
       "ties": 0
     },
     {
+      "id": "19",
+      "name": "New York Giants",
+      "conference": "NFC",
+      "wins": 6,
+      "losses": 3,
+      "ties": 1
+    },
+    {
       "id": "9",
       "name": "Green Bay Packers",
       "conference": "NFC",
@@ -192,12 +200,12 @@
       "ties": 0
     },
     {
-      "id": "19",
-      "name": "New York Giants",
+      "id": "29",
+      "name": "Carolina Panthers",
       "conference": "NFC",
       "wins": 5,
-      "losses": 3,
-      "ties": 1
+      "losses": 5,
+      "ties": 0
     },
     {
       "id": "6",
@@ -205,14 +213,6 @@
       "conference": "NFC",
       "wins": 5,
       "losses": 6,
-      "ties": 0
-    },
-    {
-      "id": "29",
-      "name": "Carolina Panthers",
-      "conference": "NFC",
-      "wins": 4,
-      "losses": 5,
       "ties": 0
     },
     {
@@ -2574,12 +2574,12 @@
         "round": 0,
         "home": "Carolina Panthers",
         "away": "Baltimore Ravens",
-        "completed": false,
-        "state": "in",
-        "detail": "0:36 - 4th",
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
         "homeScore": 35,
         "awayScore": 33,
-        "winner": null
+        "winner": "Carolina Panthers"
       },
       {
         "id": "401873070",
@@ -2664,12 +2664,12 @@
         "round": 0,
         "home": "Los Angeles Chargers",
         "away": "New York Jets",
-        "completed": false,
-        "state": "in",
-        "detail": "9:45 - 1st",
-        "homeScore": 0,
-        "awayScore": 3,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 24,
+        "awayScore": 27,
+        "winner": "New York Jets"
       },
       {
         "id": "401873069",
@@ -2679,12 +2679,12 @@
         "round": 0,
         "home": "New York Giants",
         "away": "Jacksonville Jaguars",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/22 - 4:25 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 23,
+        "awayScore": 18,
+        "winner": "New York Giants"
       },
       {
         "id": "401873075",
@@ -2694,12 +2694,12 @@
         "round": 0,
         "home": "Denver Broncos",
         "away": "Las Vegas Raiders",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/22 - 4:25 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 38,
+        "awayScore": 24,
+        "winner": "Denver Broncos"
       },
       {
         "id": "401873077",
@@ -2710,10 +2710,10 @@
         "home": "San Francisco 49ers",
         "away": "Minnesota Vikings",
         "completed": false,
-        "state": "pre",
-        "detail": "11/22 - 8:20 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "1:13 - 1st",
+        "homeScore": 7,
+        "awayScore": 7,
         "winner": null
       },
       {
