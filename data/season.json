@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-23T22:37:13.147Z",
+  "updatedAt": "2026-11-24T06:25:00.073Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 162,
+  "completedRegularGames": 163,
   "complete": false,
   "teamRecords": [
     {
@@ -32,16 +32,16 @@
       "ties": 0
     },
     {
-      "id": "4",
-      "name": "Cincinnati Bengals",
+      "id": "30",
+      "name": "Jacksonville Jaguars",
       "conference": "AFC",
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
-      "id": "30",
-      "name": "Jacksonville Jaguars",
+      "id": "4",
+      "name": "Cincinnati Bengals",
       "conference": "AFC",
       "wins": 7,
       "losses": 3,
@@ -219,7 +219,7 @@
       "id": "28",
       "name": "Washington Commanders",
       "conference": "NFC",
-      "wins": 3,
+      "wins": 4,
       "losses": 5,
       "ties": 1
     },
@@ -2724,12 +2724,12 @@
         "round": 0,
         "home": "Washington Commanders",
         "away": "Cincinnati Bengals",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/23 - 8:15 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 22,
+        "awayScore": 20,
+        "winner": "Washington Commanders"
       }
     ],
     "Week 12": [
