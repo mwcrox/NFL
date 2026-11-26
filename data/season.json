@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-25T22:29:24.792Z",
+  "updatedAt": "2026-11-26T04:23:50.917Z",
   "source": "ESPN",
   "regularComplete": false,
   "completedRegularGames": 163,
@@ -2742,10 +2742,10 @@
         "home": "Los Angeles Rams",
         "away": "Green Bay Packers",
         "completed": false,
-        "state": "pre",
-        "detail": "11/25 - 8:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "2:21 - 4th",
+        "homeScore": 23,
+        "awayScore": 13,
         "winner": null
       },
       {
