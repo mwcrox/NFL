@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-26T04:23:50.917Z",
+  "updatedAt": "2026-11-26T14:28:29.849Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 163,
+  "completedRegularGames": 164,
   "complete": false,
   "teamRecords": [
     {
@@ -168,20 +168,20 @@
       "ties": 0
     },
     {
+      "id": "14",
+      "name": "Los Angeles Rams",
+      "conference": "NFC",
+      "wins": 7,
+      "losses": 4,
+      "ties": 0
+    },
+    {
       "id": "19",
       "name": "New York Giants",
       "conference": "NFC",
       "wins": 6,
       "losses": 3,
       "ties": 1
-    },
-    {
-      "id": "9",
-      "name": "Green Bay Packers",
-      "conference": "NFC",
-      "wins": 6,
-      "losses": 4,
-      "ties": 0
     },
     {
       "id": "26",
@@ -192,11 +192,11 @@
       "ties": 0
     },
     {
-      "id": "14",
-      "name": "Los Angeles Rams",
+      "id": "9",
+      "name": "Green Bay Packers",
       "conference": "NFC",
       "wins": 6,
-      "losses": 4,
+      "losses": 5,
       "ties": 0
     },
     {
@@ -2741,12 +2741,12 @@
         "round": 0,
         "home": "Los Angeles Rams",
         "away": "Green Bay Packers",
-        "completed": false,
-        "state": "in",
-        "detail": "2:21 - 4th",
-        "homeScore": 23,
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 26,
         "awayScore": 13,
-        "winner": null
+        "winner": "Los Angeles Rams"
       },
       {
         "id": "401873081",
