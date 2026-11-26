@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-26T14:28:29.849Z",
+  "updatedAt": "2026-11-26T23:17:50.656Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 164,
+  "completedRegularGames": 165,
   "complete": false,
   "teamRecords": [
     {
@@ -144,19 +144,19 @@
       "ties": 0
     },
     {
-      "id": "8",
-      "name": "Detroit Lions",
+      "id": "3",
+      "name": "Chicago Bears",
       "conference": "NFC",
-      "wins": 8,
+      "wins": 9,
       "losses": 2,
       "ties": 0
     },
     {
-      "id": "3",
-      "name": "Chicago Bears",
+      "id": "8",
+      "name": "Detroit Lions",
       "conference": "NFC",
       "wins": 8,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
@@ -2756,12 +2756,12 @@
         "round": 0,
         "home": "Detroit Lions",
         "away": "Chicago Bears",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/26 - 1:00 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 35,
+        "awayScore": 39,
+        "winner": "Chicago Bears"
       },
       {
         "id": "401873080",
@@ -2772,10 +2772,10 @@
         "home": "Dallas Cowboys",
         "away": "Philadelphia Eagles",
         "completed": false,
-        "state": "pre",
-        "detail": "11/26 - 4:30 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
+        "state": "in",
+        "detail": "1:12 - 2nd",
+        "homeScore": 21,
+        "awayScore": 10,
         "winner": null
       },
       {
