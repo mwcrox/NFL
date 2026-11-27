@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "updatedAt": "2026-11-26T23:17:50.656Z",
+  "updatedAt": "2026-11-27T05:21:43.121Z",
   "source": "ESPN",
   "regularComplete": false,
-  "completedRegularGames": 165,
+  "completedRegularGames": 167,
   "complete": false,
   "teamRecords": [
     {
       "id": "2",
       "name": "Buffalo Bills",
       "conference": "AFC",
-      "wins": 9,
+      "wins": 10,
       "losses": 1,
       "ties": 0
     },
@@ -28,7 +28,7 @@
       "name": "Kansas City Chiefs",
       "conference": "AFC",
       "wins": 8,
-      "losses": 2,
+      "losses": 3,
       "ties": 0
     },
     {
@@ -208,20 +208,28 @@
       "ties": 0
     },
     {
-      "id": "6",
-      "name": "Dallas Cowboys",
-      "conference": "NFC",
-      "wins": 5,
-      "losses": 6,
-      "ties": 0
-    },
-    {
       "id": "28",
       "name": "Washington Commanders",
       "conference": "NFC",
       "wins": 4,
       "losses": 5,
       "ties": 1
+    },
+    {
+      "id": "6",
+      "name": "Dallas Cowboys",
+      "conference": "NFC",
+      "wins": 5,
+      "losses": 7,
+      "ties": 0
+    },
+    {
+      "id": "21",
+      "name": "Philadelphia Eagles",
+      "conference": "NFC",
+      "wins": 4,
+      "losses": 7,
+      "ties": 0
     },
     {
       "id": "27",
@@ -242,14 +250,6 @@
     {
       "id": "18",
       "name": "New Orleans Saints",
-      "conference": "NFC",
-      "wins": 3,
-      "losses": 7,
-      "ties": 0
-    },
-    {
-      "id": "21",
-      "name": "Philadelphia Eagles",
       "conference": "NFC",
       "wins": 3,
       "losses": 7,
@@ -2771,12 +2771,12 @@
         "round": 0,
         "home": "Dallas Cowboys",
         "away": "Philadelphia Eagles",
-        "completed": false,
-        "state": "in",
-        "detail": "1:12 - 2nd",
-        "homeScore": 21,
-        "awayScore": 10,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 38,
+        "awayScore": 39,
+        "winner": "Philadelphia Eagles"
       },
       {
         "id": "401873082",
@@ -2786,12 +2786,12 @@
         "round": 0,
         "home": "Buffalo Bills",
         "away": "Kansas City Chiefs",
-        "completed": false,
-        "state": "pre",
-        "detail": "11/26 - 8:20 PM EST",
-        "homeScore": 0,
-        "awayScore": 0,
-        "winner": null
+        "completed": true,
+        "state": "post",
+        "detail": "Final",
+        "homeScore": 13,
+        "awayScore": 10,
+        "winner": "Buffalo Bills"
       },
       {
         "id": "401873083",
